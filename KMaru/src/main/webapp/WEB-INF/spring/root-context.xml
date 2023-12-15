@@ -50,4 +50,8 @@
 		  <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	<!-- 끝 : SqlSessionTemplate 객체 - 디비연결(자동), myBatis 설정, SQL실행, 자원해제, 트랜잭션 관리, 쓰레드 안정성 관리 -->
+	
+	<context:component-scan base-package="com.kmaru.persistence"></context:component-scan>
+	
+	<context:component-scan base-package="com.kmaru.service"></context:component-scan>
 </beans>
