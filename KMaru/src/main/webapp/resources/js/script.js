@@ -42,7 +42,7 @@
 
   // init jarallax parallax
   var initJarallax = function() {
-    jarallax(document.querySelectorAll(".jarallax"));
+//    jarallax(document.querySelectorAll(".jarallax"));
 
     jarallax(document.querySelectorAll(".jarallax-img"), {
       keepImg: true,
