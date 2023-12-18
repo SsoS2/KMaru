@@ -35,9 +35,18 @@ public class ClassController {
 		
 	}
 	
+	// http://localhost:8088/class/classNotice
+	// 클래스 신청시 공지사항
+	@RequestMapping(value = "/classNotice", method = RequestMethod.GET)
+	public void classNoticeGET() throws Exception {
+		logger.debug("classNoticeGET() 호출");
+		
+		logger.debug("연결된 뷰페이지(views/class/classNotice.jsp)를 출력");
+		
+	}
 	
 	// http://localhost:8088/class/class
-	// 클래스 고르기
+	// 클래스 선택
 	@RequestMapping(value = "/class", method = RequestMethod.GET)
 	public void classGET() throws Exception {
 		logger.debug("classGET() 호출");
@@ -46,8 +55,9 @@ public class ClassController {
 		
 	}
 	
+	
 	// http://localhost:8088/class/booking
-	// 클래스 고르기
+	// 클래스 신청 상세페이지
 	@RequestMapping(value = "/booking", method = RequestMethod.GET)
 	public void bookingGET() throws Exception {
 		logger.debug("classGET() 호출");

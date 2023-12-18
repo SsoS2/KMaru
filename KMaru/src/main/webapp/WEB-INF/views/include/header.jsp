@@ -128,9 +128,8 @@
                       <li class="menu-item has-sub">
                         <a href="../class/class" class="item-anchor d-flex align-item-center" data-effect="Pages">클래스 신청<i class="icon icon-chevron-down"></i></a>
                       	<ul class="submenu">
-                          <li><a href="../class/class" class="item-anchor">전통음식</a></li>
-                          <li><a href="../class/class" class="item-anchor">전통다과<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="../class/class" class="item-anchor">전통음료<span class="text-primary"> (PRO)</span></a></li>
+                          <li><a href="../class/classNotice" class="item-anchor">신청안내</a></li>
+                          <li><a href="../class/class" class="item-anchor">신청하기</a></li>
                         </ul>
                       </li>
 
