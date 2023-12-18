@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.kmaru.persistence.ClassDAO;
 
 
-@Service(value = "itemService")
+@Service(value = "classService")
 public class ClassService {
 	
 	
@@ -17,6 +17,10 @@ public class ClassService {
 	@Inject
 	private ClassDAO cdao;
 	
-
+	// 조회수 증가
+//	public int viewCnt(Integer it_no) {
+//		logger.debug("viewCnt(Integer it_no) 호출 ");
+//		return idao.viewCnt(it_no);
+//	}
 	
 }

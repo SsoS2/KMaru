@@ -10,8 +10,10 @@
 </head>
 
 <body>
-
-	가게 소개 
+	<%@ include file="../include/header.jsp" %>
+	food
+	<%@ include file="../include/footer.jsp" %>
+	
 
 
 

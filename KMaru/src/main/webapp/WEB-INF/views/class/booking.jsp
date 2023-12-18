@@ -10,8 +10,10 @@
 </head>
 
 <body>
+	<%@ include file="../include/header.jsp" %>
+	booking
+	<%@ include file="../include/footer.jsp" %>
 
-	food
 	
 
 
