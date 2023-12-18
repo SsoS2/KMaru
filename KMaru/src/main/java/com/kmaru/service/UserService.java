@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.kmaru.domain.UsVo;
 import com.kmaru.persistence.UserDAO;
 
 @Service(value = "UserService")
@@ -16,4 +17,9 @@ public class UserService {
 	
 	@Inject
 	private UserDAO udao;
+	
+	public void userSignUp(UsVo vo) throws Exception{
+		logger.debug("service : userSignUp(UsVo vo)");
+		udao.userSignUp(vo);
+	}
 }

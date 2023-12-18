@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.kmaru.domain.UsVo;
+
 @Repository(value = "UserDAO")
 public class UserDAO {
 	
@@ -20,6 +22,11 @@ public class UserDAO {
 	@Inject
 	private SqlSession sqlSession;
 	
-	private static final String NAMESPACE = "com.kamru.mapper.UserMapper";
+	private static final String NAMESPACE = "com.kmaru.mapper.UserMapper";
+	
+	public void userSignUp(UsVo vo) throws Exception{
+		logger.debug("DAO : userSignUp(UsVo vo)");
+		sqlSession.insert(NAMESPACE+".userSignUp",vo);
+	}
 
 }
