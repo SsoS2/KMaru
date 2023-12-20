@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,7 +26,27 @@
     <script src="${pageContext.request.contextPath }/resources/js/modernizr.js"></script>
   </head>
   <body>
-
+  
+  <style>
+  .menu-item{
+	  position : relative;
+	  display : inline-block;
+	}
+	
+	.submenu{
+	  display : none;
+	  position : absolute;
+	}
+	
+	.submenu a{
+	  display : block;
+	}
+	
+	.menu-item:hover .submenu{
+	  display: block;
+	}
+  </style>
+	
     <div class="preloader-wrapper">
       <div class="preloader">
       </div>
@@ -138,11 +159,11 @@
                       </li>
 
                       <li class="menu-item has-sub">
-                        <a href="blog.html" class="item-anchor d-flex align-item-center" data-effect="Blog">문의하기<i class="icon icon-chevron-down"></i></a>
+                        <a href="" class="item-anchor d-flex align-item-center" data-effect="Blog">문의하기<i class="icon icon-chevron-down"></i></a>
                         <ul class="submenu">
-                          <li><a href="blog.html" class="item-anchor">공지사항</a></li>
-                          <li><a href="blog-sidebar.html" class="item-anchor">자주 묻는 질문<span class="text-primary"> (PRO)</span></a></li>
-                          <li><a href="blog-masonry.html" class="item-anchor">1 : 1 문의<span class="text-primary"> (PRO)</span></a></li>
+                          <li><a href="/notice/noticeList?page=1" class="item-anchor">공지사항</a></li>
+                          <li><a href="blog-sidebar.html" class="item-anchor">자주 묻는 질문</a></li>
+                          <li><a href="blog-masonry.html" class="item-anchor">1 : 1 문의</a></li>
                         </ul>
                       </li>
 
