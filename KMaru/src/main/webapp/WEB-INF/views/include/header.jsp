@@ -18,13 +18,19 @@
     <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/css/vendor.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- script
     ================================================== -->
     <script src="${pageContext.request.contextPath }/resources/js/modernizr.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/plugins.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/script.js"></script>
   </head>
+  
   <body>
   
   <style>

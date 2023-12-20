@@ -25,8 +25,23 @@ input[type="file"]{
     color: #000;
 }
 
-	
 </style>
+<script type="text/javascript">
+$(function(){
+	$("#us_id").keyup(function(){
+		var us_id = $(this).val();
+		alert("ds"+$(this).val());
+		if(us_id != ""){
+			if(us_id.length < 6 ){
+				$("#checkId").html('6자 이상 입력하세주세요.');
+				$("#checkId").attr('color','red');
+				$("#joinok").attr('disabled', 'disabled');
+				document.fr.us_id.focus();
+			}
+		}
+	});//id check
+});
+</script>
 	<h1>userSignUp</h1>
 	
  <div class="box box-primary">
@@ -34,11 +49,12 @@ input[type="file"]{
 		<h3 class="box-title">회원가입</h3>
 	</div>
 	<!-- enctype="multipart/form-data" -->
-	<form action="" method="post" enctype="multipart/form-data">
+	<form action="" method="post" enctype="multipart/form-data" >
 		<div class="box-body">
 			<div class="form-group">
 				<label for="exampleInput">아이디</label> 
-				<input type="text" class="form-control" id="us_id" name="us_id" placeholder="ID">
+				<input type="text" class="form-control" id="us_id" name="us_id" placeholder="ID" maxlength="15">
+				<font id="checkId" size="2"></font>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1">비밀번호</label> 

@@ -24,8 +24,8 @@
       </div>
     </div>
 
-    <script src="${pageContext.request.contextPath }/resources/js/jquery-1.11.0.min.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/js/plugins.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/js/script.js"></script>
+    <%-- <script src="${pageContext.request.contextPath }/resources/js/jquery-1.11.0.min.js"></script> --%>
+    <%-- <script src="${pageContext.request.contextPath }/resources/js/plugins.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/js/script.js"></script> --%>
   </body>
 </html>
