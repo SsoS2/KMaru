@@ -7,7 +7,7 @@
  <configuration>
  
  	<typeAliases><!-- mapper에서 패키지 이름 제거가능 -->
- 		<package name="com.dapao.domain"/>
+ 		<package name="com.kmaru.domain"/>
  	</typeAliases>
  	
  </configuration> 
