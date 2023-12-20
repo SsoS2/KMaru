@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@include file="../include/header.jsp" %>
+<%@include file="../include/header.jsp" %>
 <style>
 .box{
     padding-left: 20px;
@@ -33,8 +33,8 @@ input[type="file"]{
 	<div class="box-header with-border">
 		<h3 class="box-title">회원가입</h3>
 	</div>
-	
-	<form action="/user/userSignUp" method="post" enctype="multipart/form-data">
+	<!-- enctype="multipart/form-data" -->
+	<form action="" method="post" enctype="multipart/form-data">
 		<div class="box-body">
 			<div class="form-group">
 				<label for="exampleInput">아이디</label> 

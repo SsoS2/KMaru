@@ -9,4 +9,10 @@
 		insert into k_us(us_id,us_pw,us_name,us_tel,us_img,us_email,us_regdate,us_state) 
 		values(#{us_id},#{us_pw},#{us_name},#{us_tel},#{us_img},#{us_email},now(),"정상")
 	</insert>
+	
+	<select id="userLogin" resultType="UsVO">
+		select * from k_us 
+		where us_id=#{us_id} and us_pw=#{us_pw}
+	</select>
+	
 </mapper>  
