@@ -13,10 +13,10 @@
 <body>
 	
 	<form>
-		<img alt="전통다과" src="/resources/img/전통다과.jpg"><br>
-		<input type="text" value="${className }">
-		예약 날짜 <input type="text" value="${classTime }">
-		시간 <input type="text"> 
+		<img alt="${b_class }" src="/resources/img/${b_class }.JPG"><br>
+		<input type="hidden" value="${b_class }">
+		예약 날짜 <input type="text" value="${b_date }">
+		시간 <input type="text" value="${b_time }:00"> 
 	
 	</form>
 	

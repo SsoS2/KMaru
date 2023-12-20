@@ -16,7 +16,9 @@
 
 	
 	<section>
-		<input type="date" name="b_date" id="b_date">
+		<form>
+			<input type="date" name="b_date" id="b_date">
+		</form>
 		<hr>
 		<!-- 전통음식 -->
 		<div>
@@ -24,10 +26,10 @@
 			전통음식
 			<div class="classTimeDiv">
 				<ul>
-					<li class="classTime"><a href="/class/booking?className=전통음식&classTime=10">10:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통음식&classTime=13">13:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통음식&classTime=15">15:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통음식&classTime=17">17:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=10">10:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=13">13:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=15">15:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=17">17:00</a></li>
 				</ul>
 			</div>			
 		</div>	
@@ -37,10 +39,10 @@
 			전통음식
 			<div class="classTimeDiv">
 				<ul>
-					<li class="classTime"><a href="/class/booking?className=전통다과&classTime=10">10:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통다과&classTime=13">13:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통다과&classTime=15">15:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통다과&classTime=17">17:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=10">10:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=13">13:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=15">15:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=17">17:00</a></li>
 				</ul>
 			</div>
 		
@@ -50,10 +52,10 @@
 			전통음식
 			<div class="classTimeDiv">
 				<ul>
-					<li class="classTime"><a href="/class/booking?className=전통음료&classTime=10">10:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통음료&classTime=13">13:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통음료&classTime=15">15:00</a></li>
-					<li class="classTime"><a href="/class/booking?className=전통음료&classTime=17">17:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=10">10:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=13">13:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=15">15:00</a></li>
+					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=17">17:00</a></li>
 				</ul>
 			</div>
 		<div>
