@@ -14,12 +14,12 @@
 
       <div class="swiper main-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image: url('${pageContext.request.contextPath }/resources/images/banner1.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
+          <div class="swiper-slide" style="background-image: url('${pageContext.request.contextPath }/resources/img/intro.JPG');background-repeat: no-repeat;background-size: cover;background-position: center;">
             <div class="banner-content">
               <div class="container">
                 <div class="row">
                   <div class="col-md-6">
-                    <h2 class="banner-title">전통이 숨쉬는 곳<br>한마루에 오신걸 환영합니다!</h2>
+                    <h2 class="banner-title">전통과<br> 어우러진<br>한마루</h2>
                     <p>
                    	</p>
                     <div class="btn-wrap">
@@ -36,7 +36,7 @@
     </section>
     
     <!-- 한마루란? -->
-   	<section class="shoppify-section-banner">
+    <section class="shoppify-section-banner">
       <div class="container">
     	<h2 class="section-title">한마루 소개</h2>
         <div class="product-collection">
@@ -67,16 +67,15 @@
         <div class="product-collection">
           <div class="left-content collection-item">
             <div class="products-thumb">
-              <img src="${pageContext.request.contextPath }/resources/images/model.jpg" alt="collection item" class="large-image image-rounded">
+              <img src="${pageContext.request.contextPath }/resources/img/teacher1.JPG" alt="collection item" class="large-image image-rounded">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
               <div class="categories">전통음식 담당</div>
               <h3 class="item-title">김예빈 강사</h3>
               <p>
-              	이력<br>
-              	2021 한국대학교 전통학과 졸업 <br>
-              	2022 전통협회 협회장<br>
-              	2023 한마루 오픈 <br>
+              	한마루 전통음식 강사 <br>
+              	한국관광대학교 호텔조리과<br>
+              	前 한국전통음식연구소  대표이사<br>
               </p>
               <div class="btn-wrap">
                 <a href="shop.html" class="d-flex align-items-center">전통음식 클래스 수강하기 <i class="icon icon-arrow-io"></i>
@@ -87,22 +86,21 @@
         </div>        
       </div>
     </section>
-    <!-- 김선은 - 전통음식 -->
+    <!-- 김선은 - 전통다과 -->
    	<section class="shoppify-section-banner">
       <div class="container">
         <div class="product-collection">
           <div class="left-content collection-item">
             <div class="products-thumb">
-              <img src="${pageContext.request.contextPath }/resources/images/model.jpg" alt="collection item" class="large-image image-rounded">
+              <img src="${pageContext.request.contextPath }/resources/img/teacher2.JPG" alt="collection item" class="large-image image-rounded">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
               <div class="categories">전통다과 담당</div>
               <h3 class="item-title">김선은 강사</h3>
               <p>
-              	이력<br>
-              	2021 한국대학교 전통학과 졸업 <br>
-              	2022 전통협회 협회장<br>
-              	2023 한마루 오픈 <br>
+              	한마루 전통다과 강사 <br>
+              	문화대학교 전통예술학과(전통식생활문화전공) <br>
+              	前 한국문화센터 전임강사<br>
               </p>
               <div class="btn-wrap">
                 <a href="shop.html" class="d-flex align-items-center">전통다과 클래스 수강하기 <i class="icon icon-arrow-io"></i>
@@ -113,22 +111,22 @@
         </div>        
       </div>
     </section>
-    <!-- 윤소지 - 전통음식 -->
+    <!-- 윤소지 - 전통음료 -->
    	<section class="shoppify-section-banner">
       <div class="container">
         <div class="product-collection">
           <div class="left-content collection-item">
             <div class="products-thumb">
-              <img src="${pageContext.request.contextPath }/resources/images/model.jpg" alt="collection item" class="large-image image-rounded">
+              <img src="${pageContext.request.contextPath }/resources/img/teacher3.JPG" alt="collection item" class="large-image image-rounded">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
               <div class="categories">전통음료 담당</div>
               <h3 class="item-title">윤소지 강사</h3>
               <p>
-              	이력<br>
-              	2021 한국대학교 전통학과 졸업 <br>
-              	2022 전통협회 협회장<br>
-              	2023 한마루 오픈 <br>
+              	한마루 전통음료 강사 <br>
+              	한국대학교 전통학과(전통식음료학과) <br>
+              	前 전통협회 협회장<br>
+          		前 전통음료(주) 이사
               </p>
               <div class="btn-wrap">
                 <a href="shop.html" class="d-flex align-items-center">전통음료 클래스 수강하기 <i class="icon icon-arrow-io"></i>
