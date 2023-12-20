@@ -28,8 +28,8 @@ public class UserController {
 	@Autowired
 	private UserService uService;
 	
-	//http://localhost:8088/user/userSingUp
-	@RequestMapping(value = "/userSingUp", method = RequestMethod.GET)
+	//http://localhost:8088/user/userSignUp
+	@RequestMapping(value = "/userSignUp", method = RequestMethod.GET)
 	public String userSignUpGET() {
 		logger.debug("userSignUpGET()");
 		return "/user/userSignUp";
@@ -39,7 +39,7 @@ public class UserController {
 	public String userSignUpPOST(UsVO vo, MultipartHttpServletRequest multiRequest, Model model) throws Exception {
 		
 		//회원가입
-	 	logger.debug("userSignUpPOST()");
+	 	logger.debug("/userSignUpPOST()");
 	  	logger.debug("vo : "+vo);
 	  	uService.userSignUp(vo);
 	  	
@@ -78,13 +78,13 @@ public class UserController {
 	}
 	
 	//http://localhost:8088/user/userLogin
-	@RequestMapping(value = "userLogin",method = RequestMethod.GET)
+	@RequestMapping(value = "/userLogin",method = RequestMethod.GET)
 	public String userLiginGET() {
 		logger.debug("userLoginGET()");
 		return "/user/userLogin";
 	}
 	
-	@RequestMapping(value = "userLogin", method = RequestMethod.POST)
+	@RequestMapping(value = "/userLogin", method = RequestMethod.POST)
 	public String userLoginPost(UsVO vo, HttpSession session) throws Exception{
 		logger.debug("userLoginPost()");
 		
