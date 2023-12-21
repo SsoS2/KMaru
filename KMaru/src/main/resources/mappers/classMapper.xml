@@ -11,6 +11,9 @@
   <!-- namespace정보는 외부에서 해당 mapper(xml)를 찾을 수 있는 이름 , 실제 주소가 아니다-->
   <mapper namespace="com.kmaru.mapper.ClassMapper">
   
-
+	<insert id="classRev">
+		  insert into k_book(us_id, b_date, b_class, b_time, b_per, b_price, b_state, imp_uid, pay_uid, pay_con, pay_pg, pay_method, pay_card, card_num) 
+		  values(#{us_id},#{b_date},#{b_class},#{b_time},#{b_per},#{b_price}, #{b_state}, #{imp_uid}, #{pay_uid}, #{pay_con}, #{pay_pg}, #{pay_method}, #{pay_card}, #{card_num})
+	</insert>
   
   </mapper>

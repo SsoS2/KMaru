@@ -1,5 +1,6 @@
 package com.kmaru.controller;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -9,7 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.kmaru.domain.BookingVO;
+import com.kmaru.domain.BookVO;
+import com.kmaru.service.ClassService;
 
 
 
@@ -20,7 +22,8 @@ public class ClassController {
 	private static final Logger logger = LoggerFactory.getLogger(ClassController.class);
 	
 	
-	/* @Inject private ClassService cService; */
+	@Inject
+	private ClassService cService;
 
 
 
@@ -75,6 +78,16 @@ public class ClassController {
 				
 		
 		logger.debug("연결된 뷰페이지(views/class/booking.jsp)를 출력");
+		
+	}
+	
+	// 클래스 예약하기
+	@RequestMapping(value = "/classRev", method = RequestMethod.POST)
+	public void classRevPOST(BookVO bookVO, Model model, HttpSession session) throws Exception {
+		logger.debug("classRevPOST() 호출");
+	
+		// 예약 내역 저장
+		cService.classRev(bookVO);
 		
 	}
 	

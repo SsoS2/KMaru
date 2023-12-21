@@ -23,12 +23,18 @@
 
 	<form action="" method="post">
 	
-		인원 <input type="text"> <br>
-		예약자 <input type="text"> <br>
-		연락처 <input type="text"> <br>
-		금액 <input type="text"> <br>
-		특이사항 <input type="text"> <br>
+		인원 <br> <input type="number" value="1" placeholder="최대6명"> <br>
+		예약자  <br> <input type="text" placeholder="ex)김영희"> <br>
+		연락처  <br> <input type="tel"> <br>
+		금액  <br> <input type="text" value="30,000원" readonly> <br>
+		요청사항 <br> <textarea rows="3" cols="25"></textarea> <br>
 	
+		결제 방법
+		<input type="text" value="무통장입금">
+		<input type="text" value="카드결제">
+		<input type="text" value="카카오페이">
+		<input type="text" value="간편결제">
+		
 		<input type="submit" value="예약하기">
 	</form>
 	

@@ -22,7 +22,7 @@
 		<hr>
 		<!-- 전통음식 -->
 		<div>
-			<img alt="전통음식" src="/resources/img/전통음식.png"><br>
+			<img alt="전통음식" src="/resources/img/전통음식.JPG"><br>
 			전통음식
 			<div class="classTimeDiv">
 				<ul>
@@ -35,7 +35,7 @@
 		</div>	
 		<!-- 전통다과 -->
 		<div>
-			<img alt="전통다과" src="/resources/img/전통다과.jpg"><br>
+			<img alt="전통다과" src="/resources/img/전통다과.JPG"><br>
 			전통음식
 			<div class="classTimeDiv">
 				<ul>
@@ -48,7 +48,7 @@
 		
 		</div>	
 		<!-- 전통음료 -->
-			<img alt="음료" src="/resources/img/전통음료.png"><br>
+			<img alt="음료" src="/resources/img/전통음료.JPG"><br>
 			전통음식
 			<div class="classTimeDiv">
 				<ul>
