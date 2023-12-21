@@ -10,6 +10,11 @@
 		values(#{us_id},#{us_pw},#{us_name},#{us_tel},#{us_img},#{us_email},now(),"정상")
 	</insert>
 	
+	<select id="userIdCheck" resultType="String">
+		select us_id from k_us 	
+		where us_id=#{us_id}
+	</select>
+	
 	<select id="userLogin" resultType="UsVO">
 		select * from k_us 
 		where us_id=#{us_id} and us_pw=#{us_pw}

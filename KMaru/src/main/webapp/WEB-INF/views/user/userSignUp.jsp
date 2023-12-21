@@ -29,14 +29,42 @@ input[type="file"]{
 <script type="text/javascript">
 $(function(){
 	$("#us_id").keyup(function(){
-		var us_id = $(this).val();
-		alert("ds"+$(this).val());
+		var us_id = $("#us_id").val();
 		if(us_id != ""){
 			if(us_id.length < 6 ){
 				$("#checkId").html('6자 이상 입력하세주세요.');
 				$("#checkId").attr('color','red');
-				$("#joinok").attr('disabled', 'disabled');
+				$("#join").attr('disabled', 'disabled');
 				document.fr.us_id.focus();
+			}else{
+				$("#checkId").html("");
+				console.log(us_id);
+				$.ajax({
+					url : "/user/userIdCheck",
+					data : {
+						"us_id" : us_id
+					},
+					dataType : "json",
+					success : function(data){
+						console.log(data);
+						if(data == 0 ){
+							$("#checkId").text("사용이 불가능한 아이디입니다.");
+							$("#checkId").attr('color','red');
+							$("#join").attr('disabled', 'disabled');
+							document.fr.us_id.focus();
+						}
+						else if(data == -1 ){
+							$("#checkId").text("아이디를 입력해주세요.");
+							$("#checkId").attr('color','red');
+							$("#join").attr('disabled', 'disabled');
+							document.fr.us_id.focus();
+						}else{
+							$("#checkId").text("사용이 가능한 아이디입니다.");
+							$("#checkId").attr('color','green');
+							$("#join").removeAttr("disabled");
+						}
+					}//success
+				})// ajax
 			}
 		}
 	});//id check
@@ -49,7 +77,7 @@ $(function(){
 		<h3 class="box-title">회원가입</h3>
 	</div>
 	<!-- enctype="multipart/form-data" -->
-	<form action="" method="post" enctype="multipart/form-data" >
+	<form action="" method="post" enctype="multipart/form-data" name="fr">
 		<div class="box-body">
 			<div class="form-group">
 				<label for="exampleInput">아이디</label> 
@@ -85,7 +113,7 @@ $(function(){
 			<label> <input type="checkbox" name="checkbox" > <a href="">이용약관</a>및 <a href="">개인정보취급방침</a>에 동의합니다.</label>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary">회원가입</button>
+			<button type="submit" class="btn btn-primary" id="join">회원가입</button>
 		</div>
 	</form>
 </div>

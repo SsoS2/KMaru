@@ -41,13 +41,13 @@
   }
 
   // init jarallax parallax
-  var initJarallax = function() {
+  /*var initJarallax = function() {
     jarallax(document.querySelectorAll(".jarallax"));
 
     jarallax(document.querySelectorAll(".jarallax-img"), {
       keepImg: true,
     });
-  }
+  }*/
 
   // Tab Section
   var initTabs = function() {
@@ -74,7 +74,7 @@
     searchPopup();
     initPreloader();
     initTabs();
-    initJarallax();
+    /*initJarallax();*/
 
     jQuery(document).ready(function($) {
       jQuery('.stellarnav').stellarNav({

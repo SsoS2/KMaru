@@ -26,9 +26,7 @@
     <!-- script
     ================================================== -->
     <script src="${pageContext.request.contextPath }/resources/js/modernizr.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/js/plugins.js"></script>
-    <script src="${pageContext.request.contextPath }/resources/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   
   <body>
@@ -107,11 +105,20 @@
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
+                <c:if test="${empty us_id }">
                   <li>
-                    <a href="login.html">
+                    <a href="/user/userLogin">
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
+                </c:if>
+                <c:if test="${!empty us_id }">
+                  <li>
+                    <a href="/user/userInfo">
+                      <i class="icon icon-user"></i>
+                    </a>
+                  </li>
+                </c:if>
                   <li>
                     <a href="cart.html">
                       <i class="icon icon-shopping-cart"></i>
