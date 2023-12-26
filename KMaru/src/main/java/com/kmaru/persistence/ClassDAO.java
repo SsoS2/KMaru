@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.kmaru.domain.BookVO;
+
 
 @Repository(value = "classDAO")
 public class ClassDAO{
@@ -24,6 +26,11 @@ public class ClassDAO{
 	private static final String NAMESPACE
 	= "com.kmaru.mapper.ClassMapper";
 
+	// 클래스 예약
+	public int classRev (BookVO bookVO) {
+		logger.debug("DAO : classRev(BookVO bookVO) 호출");
+		return sqlSession.insert(NAMESPACE + ".classRev", bookVO);
+	}
 	
 	
 
