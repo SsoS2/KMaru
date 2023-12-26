@@ -136,7 +136,7 @@
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
                   <a href="index.html">
-                    <img src="${pageContext.request.contextPath }/resources/images/main-logo.png" alt="logo">
+                    <img src="${pageContext.request.contextPath }/resources/images/main-logo2.png" alt="logo" width="100px" height="100px">
                   </a>
                 </div>
               </div>
@@ -147,7 +147,7 @@
                     <ul class="menu-list">
 
                       <li>
-                        <a href="../class/introduce" class="item-anchor active d-flex align-item-center" data-effect="Home">한마루 소개</a>
+                        <a href="/class/introduce" class="item-anchor active d-flex align-item-center" data-effect="Home">한마루 소개</a>
                       </li>
 
                       <li class="menu-item has-sub">
