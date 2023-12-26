@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
   <head>
     <title>Ultras - Clothing Store eCommerce Store HTML Website Template</title>
     <meta charset="utf-8">
@@ -23,10 +23,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- script
     ================================================== -->
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/modernizr.js"></script>
   </head>
   <body>
-  
+  <script type="text/javascript">
+	  $('#noti').click(function () {return false;});
+  </script>
   <style>
   .menu-item{
 	  position : relative;
@@ -159,10 +163,10 @@
                       </li>
 
                       <li class="menu-item has-sub">
-                        <a href="" class="item-anchor d-flex align-item-center" data-effect="Blog">문의하기<i class="icon icon-chevron-down"></i></a>
+                        <a href="" id="noti" class="item-anchor d-flex align-item-center" data-effect="Blog">문의하기<i class="icon icon-chevron-down"></i></a>
                         <ul class="submenu">
                           <li><a href="/notice/noticeList?page=1" class="item-anchor">공지사항</a></li>
-                          <li><a href="blog-sidebar.html" class="item-anchor">자주 묻는 질문</a></li>
+                          <li><a href="/notice/faqList?page=1" class="item-anchor">자주 묻는 질문</a></li>
                           <li><a href="blog-masonry.html" class="item-anchor">1 : 1 문의</a></li>
                         </ul>
                       </li>

@@ -106,9 +106,9 @@ li {
 </style>
 <body>
 	<div id="notice">
-		<h1>공지사항</h1>
+		<h1>FAQ</h1>
 		<div id="Accordion_wrap">
-			<c:forEach var="list" items="${noticeList }">
+			<c:forEach var="list" items="${faqList }">
 				<div class="que">
 					<span>${list.no_title }</span>
 					<div class="arrow-wrap">
@@ -123,15 +123,15 @@ li {
 		<div class="page">
 			<ul class="pagination pagination-sm no-margin pull-right">
 				<c:if test="${pageVO.prev }">
-					<li><a href="/notice/noticeList?page=${pageVO.startPage-1 } ">←</a></li>
+					<li><a href="/notice/faqList?page=${pageVO.startPage-1 } ">←</a></li>
 				</c:if>
 
 				<c:forEach var="i" begin="${pageVO.startPage }" end="${pageVO.endPage }" step="1">
-					<li><a href="/notice/noticeList?page=${i }"> ${i }</a></li>
+					<li><a href="/notice/faqList?page=${i }"> ${i }</a></li>
 				</c:forEach>
 
 				<c:if test="${pageVO.next }">
-					<li><a href="/notice/noticeList?page=${pageVO.endPage+1 }">→</a></li>
+					<li><a href="/notice/faqList?page=${pageVO.endPage+1 }">→</a></li>
 				</c:if>
 			</ul>
 		</div>
