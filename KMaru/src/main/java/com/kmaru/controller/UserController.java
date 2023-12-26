@@ -97,7 +97,7 @@ public class UserController {
 		
 		session.setAttribute("us_id", resultVO.getUs_id());
 		
-		return "main";
+		return "redirect:/KMaru";
 	}
 	
 }
