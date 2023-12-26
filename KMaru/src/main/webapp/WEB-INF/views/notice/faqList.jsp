@@ -2,7 +2,7 @@
 <%@include file="../include/header.jsp"%>
 
 <style>
-.content-wrapper {
+.content-wrapper { 
 	background-color: white;
 }
 

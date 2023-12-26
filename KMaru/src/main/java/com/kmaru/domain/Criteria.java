@@ -6,7 +6,7 @@ package com.kmaru.domain;
  */
 
 // 기준
-public class Criteria {
+public class Criteria { 
 	
 	private int page;
 	private int pageSize;

@@ -14,7 +14,7 @@ import com.kmaru.domain.NoticeVO;
 
 
 @Repository(value = "NoticeDAO")
-public class NoticeDAO {
+public class NoticeDAO { 
 	
 
 	private static final Logger logger = LoggerFactory.getLogger(NoticeDAO.class);

@@ -17,7 +17,7 @@ import com.kmaru.service.NoticeService;
 
 @Controller
 @RequestMapping(value = "/notice/*")
-public class NoticeController {
+public class NoticeController { 
 	
 	private static final Logger logger = LoggerFactory.getLogger(NoticeController.class);
 	

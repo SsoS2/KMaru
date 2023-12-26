@@ -13,7 +13,7 @@ import com.kmaru.persistence.NoticeDAO;
 
 @Service(value = "NoticeService")
 public class NoticeService {
-	
+	 
 	private static final Logger logger = LoggerFactory.getLogger(NoticeService.class);
 	
 	@Autowired
