@@ -24,9 +24,11 @@ public class NoticeController {
 	@Autowired
 	private NoticeService nService;
 	
+	// http://localhost:8088/notice/noticeList?page=1
+	// 공지리스트
 	@RequestMapping(value="/noticeList")
 	public void viewNotice(Criteria cri, Model model) throws Exception{
-		logger.debug("viewNotice()");
+		logger.debug("noticeList()");
 		
 		// 페이징처리(페이지 블럭 처리 객체)
 		PageVO pageVO = new PageVO();
@@ -50,4 +52,31 @@ public class NoticeController {
 		model.addAttribute("noticeList", noticeList);
 		
 	}
+	
+	// faq리스트
+	// http://localhost:8088/notice/faqList?page=1
+	@RequestMapping(value="/faqList")
+	public void viewFAQ(Criteria cri,Model model) throws Exception{
+		// 페이징처리(페이지 블럭 처리 객체)
+		PageVO pageVO = new PageVO();
+		pageVO.setCri(cri);
+		// 전체 공지 수 조회
+		pageVO.setTotalCount(nService.getFAQCount(cri));
+
+		model.addAttribute("pageVO", pageVO);
+
+		// 페이지이동시 받아온 페이지 번호
+		if (cri.getPage() > pageVO.getEndPage()) {
+			// 잘못된 페이지 정보를 입력받음. 글이없음.
+			cri.setPage(pageVO.getEndPage());
+		}
+
+		List<NoticeVO> faqList = nService.getFAQList(cri);
+		// 리스트사이즈확인
+		logger.debug(" 글개수 : " + faqList.size());
+		
+		// db 정보 -> model객체에 담아 view전달
+		model.addAttribute("faqList", faqList);
+	}
+	
 }

@@ -37,8 +37,23 @@ public class NoticeDAO {
 		return sqlSession.selectList(NAMESPACE+".getNoticeList", cri);
 	}
 	
-	public NoticeVO viewNotice() throws Exception {
-		logger.debug("viewNotice()");
-		return sqlSession.selectOne(NAMESPACE+".viewNotice");
+	public NoticeVO noticeRead(Integer no_bno) throws Exception{
+		logger.debug("noticeRead(Integer no_bno)");
+		return sqlSession.selectOne(NAMESPACE+".noticeRead", no_bno);
+	}
+	
+	public int getFAQCount(Criteria cri) throws Exception{
+		logger.debug("getFAQCount(Criteria cri)");
+		return sqlSession.selectOne(NAMESPACE+".getFAQCount", cri);
+	}
+	
+	public List<NoticeVO> getFAQList(Criteria cri) throws Exception{
+		logger.debug("getFAQList(Criteria cri)");
+		return sqlSession.selectList(NAMESPACE+".getFAQList", cri);
+	}
+	
+	public NoticeVO faqRead(Integer no_bno) throws Exception{
+		logger.debug("faqRead(Integer no_bno)");
+		return sqlSession.selectOne(NAMESPACE+".faqRead", no_bno);
 	}
 }
