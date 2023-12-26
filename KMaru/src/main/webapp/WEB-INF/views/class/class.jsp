@@ -5,66 +5,96 @@
 <html>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+.sub_title{
+
+}
 
 
+.class_img{
+
+	width: 300px;
+	height: 300px;
+}
+
+
+.class_name{
+
+	font-weight: bold;
+	width: 300px;
+	height: 300px;
+	text-align: center;
+	border: 10px; 
+}
+
+.class_time{
+	text-align: center;
+	border: 10px; 
+	width : 100px;
+	height : 40px;
+	color : black;
+	list-style : none;
+}
+
+
+</style>
 </head>
 
 <body>
 
 	<hr>
-	<strong>클래스 신청하기</strong>
+	<h2 class="sub_title">클래스 신청하기</h2>
 
-	
-	<section>
-		<form>
-			<input type="date" name="b_date" id="b_date">
-		</form>
+	<section class="class_rev">
+		<div class="class_rev_date">
+			<form>
+				<input type="date" name="b_date" id="b_date">
+			</form>
+		</div>
 		<hr>
 		<!-- 전통음식 -->
-		<div>
-			<img alt="전통음식" src="/resources/img/전통음식.JPG"><br>
-			전통음식
-			<div class="classTimeDiv">
+		<div class="Class_food">
+			<img class="class_img" alt="전통음식" src="/resources/img/전통음식.JPG"><br>
+			<input type="text" value="전통음식" class="class_name" readonly> 
+			<div class="class_time_div">
 				<ul>
-					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=10">10:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=13">13:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=15">15:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통음식&b_time=17">17:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=10">10:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=13">13:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=15">15:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=17">17:00</a></li>
 				</ul>
 			</div>			
 		</div>	
 		<!-- 전통다과 -->
-		<div>
-			<img alt="전통다과" src="/resources/img/전통다과.JPG"><br>
-			전통음식
-			<div class="classTimeDiv">
+		<div class="Class_snack">
+			<img class="class_img" alt="전통다과" src="/resources/img/전통다과.JPG"><br>
+			<input type="text" value="전통다과" class="class_name" readonly> 
+			<div class="class_time_div">
 				<ul>
-					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=10">10:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=13">13:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=15">15:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통다과&b_time=17">17:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=10">10:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=13">13:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=15">15:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=17">17:00</a></li>
 				</ul>
 			</div>
 		
 		</div>	
 		<!-- 전통음료 -->
-			<img alt="음료" src="/resources/img/전통음료.JPG"><br>
-			전통음식
-			<div class="classTimeDiv">
+		<div class="class_drink">
+			<img class="class_img" alt="전통음료" src="/resources/img/전통음료.JPG"><br>
+			<input type="text" value="전통음료" class="class_name" readonly> 
+			<div class="class_time_div">
 				<ul>
-					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=10">10:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=13">13:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=15">15:00</a></li>
-					<li class="classTime"><a href="/class/booking?b_class=전통음료&b_time=17">17:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=10">10:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=13">13:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=15">15:00</a></li>
+					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=17">17:00</a></li>
 				</ul>
 			</div>
-		<div>
-		
-		</div>	
-	
+		</div>
 	
 	</section>
-    
     
     종류(음식)
     일정(날짜)

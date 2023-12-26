@@ -11,6 +11,17 @@
 </head>
 
 <body>
+
+	<!-- 이상한 경로로 왔을 시 이동 -->
+	<!-- 로그인 창으로 이동 -->
+	<c:if test="${empty us_id}">
+		${"<script>alert('로그인이 필요합니다');location.href='/user/userLogin';</script>" }
+	</c:if>
+	<!-- 클래스 선택 창으로 이동 -->
+	<c:if test="${empty b_class && !empty us_id}">
+		<c:redirect url="../class/class"/>
+	</c:if>
+	
 	
 	<form>
 		<img alt="${b_class }" src="/resources/img/${b_class }.JPG"><br>
