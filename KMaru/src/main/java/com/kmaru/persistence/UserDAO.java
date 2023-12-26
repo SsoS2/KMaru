@@ -41,10 +41,8 @@ public class UserDAO {
 	//로그인
 	public UsVO userLogin(UsVO vo) throws Exception{
 		logger.debug("DAO : userLogin(UsVO vo)");
-		
 		UsVO resultVO = sqlSession.selectOne(NAMESPACE+".userLogin", vo);
 		logger.debug("DAO : resultVO : "+resultVO);
-		
 		return resultVO;
 	}
 

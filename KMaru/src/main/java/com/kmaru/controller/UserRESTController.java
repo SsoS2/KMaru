@@ -1,6 +1,6 @@
 package com.kmaru.controller;
 
-import java.util.Optional;
+import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,19 +15,16 @@ public class UserRESTController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserRESTController.class);
 	
+	@Inject
 	private UserService uService;
 	
 	@RequestMapping(value = "/userIdCheck")
 	public int userIdCheck(String us_id) throws Exception{
 		logger.debug("REST : userIdCheck()");
-		if(us_id != null) {
-			Optional<String> result = Optional.ofNullable(uService.userIdCheck(us_id));
-			logger.debug("result"+result);
-			if(!result.equals(us_id)) {
+		String result = uService.userIdCheck(us_id);
+			if(result.equals("0")) {
 				return 1;
 			}
-			return 0;
-		}
-		return -1;
+		return 0;
 	}
 }

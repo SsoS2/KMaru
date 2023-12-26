@@ -34,9 +34,8 @@ public class UserService {
 	
 	//로그인
 	public UsVO userLogin(UsVO vo) throws Exception{
-		logger.debug("service : userLogin(UsVO vo");
+		logger.debug("service : userLogin(UsVO vo)");
 		UsVO resultVO = udao.userLogin(vo);
-		
 		return resultVO;
 	}
 }
