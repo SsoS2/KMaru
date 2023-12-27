@@ -66,7 +66,7 @@ $(function(){
 	$("#us_id").keyup(function(){
 		var us_id = $("#us_id").val();
 		if(us_id != ""){
-			if(1 < us_id.length < 6 ){
+			if(us_id.length < 6 ){
 				$("#checkId").html('6자 이상 입력해주세요.');
 				$("#checkId").attr('color','red');
 				$("#join").attr('disabled', 'disabled');
