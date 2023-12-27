@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kmaru.domain.Criteria;
 import com.kmaru.domain.NoticeVO;
@@ -79,4 +80,16 @@ public class NoticeController {
 		model.addAttribute("faqList", faqList);
 	}
 	
+	
+	
+	// http://localhost:8088/notice/chat
+	@RequestMapping(value="/chat")
+	public void chatbot() throws Exception{
+		
+	}
+	
+	
+	
+	
+
 }

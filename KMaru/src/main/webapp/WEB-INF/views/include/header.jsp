@@ -176,7 +176,7 @@
                       </li>
 
                       <li class="menu-item has-sub">
-                        <a href="" id="noti" class="item-anchor d-flex align-item-center" data-effect="Blog">문의하기<i class="icon icon-chevron-down"></i></a>
+                        <a href="javascript:void(0);" id="noti" class="item-anchor d-flex align-item-center" data-effect="Blog">문의하기<i class="icon icon-chevron-down"></i></a>
                         <ul class="submenu">
                           <li><a href="/notice/noticeList?page=1" class="item-anchor">공지사항</a></li>
                           <li><a href="/notice/faqList?page=1" class="item-anchor">자주 묻는 질문</a></li>
