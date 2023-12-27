@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kmaru.domain.BookVO;
+import com.kmaru.domain.UsVO;
 import com.kmaru.service.ClassService;
 
 
@@ -66,16 +67,17 @@ public class ClassController {
 	public void bookingGET(String b_class,String b_date,String b_time, Model model, HttpSession session) throws Exception {
 		logger.debug("bookingGET() 호출");
 		
+		// 세션 아이디
+		String us_id = (String)session.getAttribute("us_id");
+		
 		// 예약 클래스 정보
-		/*
-		 * model.addAttribute("b_class", bookingVO.getB_class());
-		 * model.addAttribute("b_date", bookingVO.getB_date());
-		 * model.addAttribute("b_time", bookingVO.getB_time());
-		 */
 		model.addAttribute("b_class", b_class);
 		model.addAttribute("b_date", b_date);
 		model.addAttribute("b_time", b_time);
-				
+		
+		// 회원 정보 조회
+		UsVO usVO = cService.info(us_id);
+		model.addAttribute("us_info", usVO);
 		
 		logger.debug("연결된 뷰페이지(views/class/booking.jsp)를 출력");
 		

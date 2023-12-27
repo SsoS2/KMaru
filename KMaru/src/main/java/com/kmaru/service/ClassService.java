@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.kmaru.domain.BookVO;
+import com.kmaru.domain.UsVO;
 import com.kmaru.persistence.ClassDAO;
 
 
@@ -24,5 +25,12 @@ public class ClassService {
 		logger.debug("classRev(BookVO bookVO) 호출 ");
 		return cdao.classRev(bookVO);
 	}
+	
+	// 회원 정보 조회
+	public UsVO info(String us_id) {
+		logger.debug("info(String us_id) 호출 ");
+		return cdao.info(us_id);
+	}
+
 	
 }

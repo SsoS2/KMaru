@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.kmaru.domain.BookVO;
+import com.kmaru.domain.UsVO;
 
 
 @Repository(value = "classDAO")
@@ -32,6 +33,11 @@ public class ClassDAO{
 		return sqlSession.insert(NAMESPACE + ".classRev", bookVO);
 	}
 	
+	// 회원 정보 조회
+	public UsVO info(String us_id) {
+		logger.debug("DAO : info(String us_id) 호출");
+		return sqlSession.selectOne(NAMESPACE + ".info", us_id);
+	}
 	
 
 }

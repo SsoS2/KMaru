@@ -15,6 +15,7 @@ public class BookVO {
 	private int b_per; // 신청 인원
 	private int b_price; // 가격
 	private String b_state; // 예약상태
+	private String b_ment; // 요청사항
 	
 	private String imp_uid; // 결제고유번호
 	private String pay_uid; // 주문번호(merchant_uid)

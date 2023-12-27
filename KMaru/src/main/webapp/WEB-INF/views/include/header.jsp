@@ -106,7 +106,7 @@
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
                   <li>
-                    <a href="login.html">
+                    <a href="/user/userLogin">
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
@@ -135,7 +135,7 @@
             <div class="row d-flex align-items-center">
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
-                  <a href="index.html">
+                  <a href="/KMaru">
                     <img src="${pageContext.request.contextPath }/resources/images/main-logo2.png" alt="logo" width="100px" height="100px">
                   </a>
                 </div>

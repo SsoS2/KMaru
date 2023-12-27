@@ -15,5 +15,10 @@
 		  insert into k_book(us_id, b_date, b_class, b_time, b_per, b_price, b_state, imp_uid, pay_uid, pay_con, pay_pg, pay_method, pay_card, card_num) 
 		  values(#{us_id},#{b_date},#{b_class},#{b_time},#{b_per},#{b_price}, #{b_state}, #{imp_uid}, #{pay_uid}, #{pay_con}, #{pay_pg}, #{pay_method}, #{pay_card}, #{card_num})
 	</insert>
+	
+	<select id="info" resultType="UsVO">
+		select * from k_us  
+		where us_id=#{us_id}
+	</select>
   
   </mapper>

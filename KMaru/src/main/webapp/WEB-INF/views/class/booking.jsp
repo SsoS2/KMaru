@@ -9,7 +9,16 @@
 
 
 </head>
+<script type="text/javascript">
 
+	function check(){
+		
+		$("#b_price").attr('value',$('#b_per').val() * 30000);
+		$("#b_price").append("원");
+		
+	}
+
+</script>
 <body>
 
 	<!-- 이상한 경로로 왔을 시 이동 -->
@@ -34,11 +43,11 @@
 
 	<form action="" method="post">
 	
-		인원 <br> <input type="number" value="1" placeholder="최대6명"> <br>
-		예약자  <br> <input type="text" placeholder="ex)김영희"> <br>
-		연락처  <br> <input type="tel"> <br>
-		금액  <br> <input type="text" value="30,000원" readonly> <br>
-		요청사항 <br> <textarea rows="3" cols="25"></textarea> <br>
+		인원(최대 6명) <br> <input type="number" value="1" name="b_per" id="b_per" onchange="check()"> <br>
+		예약자  <br> <input type="text" value="${us_info.us_name}" name="us_name" id="us_name" readonly> <br>
+		연락처  <br> <input type="tel" value="${us_info.us_tel }" name="us_tel" id="us_tel" > <br>
+		금액  <br> <input type="text" value="30,000원" name="b_price" id="b_price" readonly> <br>
+		요청사항 <br> <textarea rows="3" cols="25" name="b_ment" id="b_ment" ></textarea> <br>
 	
 		결제 방법
 		<input type="text" value="무통장입금">
