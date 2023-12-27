@@ -27,4 +27,11 @@ public class UserRESTController {
 			}
 		return 0;
 	}
+	
+	@RequestMapping(value = "/userFindIdCompare")
+	public String userFindIdCompare(String us_name, String us_email) {
+		logger.debug("REST : userFindIdCompare()");
+		
+		return "";
+	}
 }

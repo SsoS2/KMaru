@@ -100,4 +100,10 @@ public class UserController {
 		return "redirect:/KMaru";
 	}
 	
+	@RequestMapping(value = "/userFindId", method = RequestMethod.GET)
+	public String userFindIdGET() {
+		logger.debug("userFindIdGET()");
+		return "/user/userFindId";
+	}
+	
 }
