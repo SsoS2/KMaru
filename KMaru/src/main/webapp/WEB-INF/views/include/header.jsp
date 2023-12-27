@@ -148,7 +148,7 @@
             <div class="row d-flex align-items-center">
               <div class="col-lg-2 col-md-2">
                 <div class="main-logo">
-                  <a href="index.html">
+                  <a href="/KMaru">
                     <img src="${pageContext.request.contextPath }/resources/images/main-logo2.png" alt="logo" width="100px" height="100px">
                   </a>
                 </div>
