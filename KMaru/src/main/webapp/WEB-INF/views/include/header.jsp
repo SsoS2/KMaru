@@ -18,7 +18,9 @@
     <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/css/vendor.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- script
@@ -26,7 +28,9 @@
     <!-- jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath }/resources/js/modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
+  
   <body>
   <script type="text/javascript">
 	  $('#noti').click(function () {return false;});
@@ -105,11 +109,20 @@
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
+                <c:if test="${empty us_id }">
                   <li>
-                    <a href="login.html">
+                    <a href="/user/userLogin">
                       <i class="icon icon-user"></i>
                     </a>
                   </li>
+                </c:if>
+                <c:if test="${!empty us_id }">
+                  <li>
+                    <a href="/user/userInfo">
+                      <i class="icon icon-user"></i>
+                    </a>
+                  </li>
+                </c:if>
                   <li>
                     <a href="cart.html">
                       <i class="icon icon-shopping-cart"></i>
