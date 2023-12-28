@@ -22,20 +22,26 @@ public class UserService {
 	
 	//회원가입
 	public void userSignUp(UsVO vo) throws Exception{
-		logger.debug("service : userSignUp(UsVO vo)");
+		logger.debug("service : userSignUp()");
 		udao.userSignUp(vo);
 	}
 	
 	//회원가입 아이디 중복체크
 	public String userIdCheck(String us_id) throws Exception{
-		logger.debug("service : userIdCheck(String us_id)");
+		logger.debug("service : userIdCheck()");
 		return udao.userIdCheck(us_id);
 	}
 	
 	//로그인
 	public UsVO userLogin(UsVO vo) throws Exception{
-		logger.debug("service : userLogin(UsVO vo)");
+		logger.debug("service : userLogin()");
 		UsVO resultVO = udao.userLogin(vo);
 		return resultVO;
+	}
+	
+	// 아이디 찾기
+	public String userFindIdCompare(UsVO vo) throws Exception{
+		logger.debug("service : userFindIdCompare()");
+		return  udao.userFindIdCompare(vo);
 	}
 }

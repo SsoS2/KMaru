@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kmaru.domain.UsVO;
 import com.kmaru.service.UserService;
 
 @RestController
@@ -29,9 +30,12 @@ public class UserRESTController {
 	}
 	
 	@RequestMapping(value = "/userFindIdCompare")
-	public String userFindIdCompare(String us_name, String us_email) {
+	public String userFindIdCompare(UsVO vo) throws Exception{
 		logger.debug("REST : userFindIdCompare()");
-		
-		return "";
+		String result = uService.userFindIdCompare(vo);
+			if(result.equals("0")) {
+				return "불일치";
+			}
+		return result;
 	}
 }
