@@ -59,10 +59,10 @@
 			<input type="text" value="전통음식" class="class_name" readonly> 
 			<div class="class_time_div">
 				<ul>
-					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=10">10:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=13">13:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=15">15:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통음식&b_time=17">17:00</a></li>
+					<li class="class_time,class_time_10"><a href="/class/booking?b_class=전통음식&b_time=10">10:00</a></li>
+					<li class="class_time,class_time_13"><a href="/class/booking?b_class=전통음식&b_time=13">13:00</a></li>
+					<li class="class_time,class_time_15"><a href="/class/booking?b_class=전통음식&b_time=15">15:00</a></li>
+					<li class="class_time,class_time_17"><a href="/class/booking?b_class=전통음식&b_time=17">17:00</a></li>
 				</ul>
 			</div>			
 		</div>	
@@ -72,13 +72,12 @@
 			<input type="text" value="전통다과" class="class_name" readonly> 
 			<div class="class_time_div">
 				<ul>
-					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=10">10:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=13">13:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=15">15:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통다과&b_time=17">17:00</a></li>
+					<li class="class_time,class_time_10"><a href="/class/booking?b_class=전통다과&b_time=10">10:00</a></li>
+					<li class="class_time,class_time_13"><a href="/class/booking?b_class=전통다과&b_time=13">13:00</a></li>
+					<li class="class_time,class_time_15"><a href="/class/booking?b_class=전통다과&b_time=15">15:00</a></li>
+					<li class="class_time,class_time_17"><a href="/class/booking?b_class=전통다과&b_time=17">17:00</a></li>
 				</ul>
 			</div>
-		
 		</div>	
 		<!-- 전통음료 -->
 		<div class="class_drink">
@@ -86,14 +85,13 @@
 			<input type="text" value="전통음료" class="class_name" readonly> 
 			<div class="class_time_div">
 				<ul>
-					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=10">10:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=13">13:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=15">15:00</a></li>
-					<li class="class_time"><a href="/class/booking?b_class=전통음료&b_time=17">17:00</a></li>
+					<li class="class_time,class_time_10"><a href="/class/booking?b_class=전통음료&b_time=10">10:00</a></li>
+					<li class="class_time,class_time_13"><a href="/class/booking?b_class=전통음료&b_time=13">13:00</a></li>
+					<li class="class_time,class_time_15"><a href="/class/booking?b_class=전통음료&b_time=15">15:00</a></li>
+					<li class="class_time,class_time_17"><a href="/class/booking?b_class=전통음료&b_time=17">17:00</a></li>
 				</ul>
 			</div>
 		</div>
-	
 	</section>
     
     종류(음식)
@@ -146,10 +144,18 @@
 경우에 따라 공간이 폐쇄되어 갇히거나 놀라는 연출이 있을 수 있으므로 관련된 질병이나 신체 장애가 있는 분들은 예약 전 각 매장으로 문의 부탁드립니다.
     
     
-	<%@ include file="../include/footer.jsp" %>
-	
+<%@ include file="../include/footer.jsp" %>
 
+<script type="text/javascript">
 
+	$(document).ready(function(){
+		
+		var serverTime = ${serverTime};
+		console.log(serverTime);
+		
+	});
+
+</script>
 
 </body>
 </html>

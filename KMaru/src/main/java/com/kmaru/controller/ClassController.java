@@ -1,5 +1,9 @@
 package com.kmaru.controller;
 
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kmaru.domain.BookVO;
 import com.kmaru.domain.UsVO;
@@ -53,8 +58,17 @@ public class ClassController {
 	// http://localhost:8088/class/class
 	// 클래스 선택
 	@RequestMapping(value = "/class", method = RequestMethod.GET)
-	public void classGET() throws Exception {
+	public void classGET(Locale locale, Model model) throws Exception {
 		logger.debug("classGET() 호출");
+		
+		// 현재 시간
+		logger.debug("Welcome! The client locale is {}.", locale);
+		Date date = new Date();
+//		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale); 
+		DateFormat dateFormat = DateFormat.getDateTimeInstance();
+		String formattedDate = dateFormat.format(date);
+		model.addAttribute("serverTime", formattedDate );
+		logger.debug("ser : "+ formattedDate);
 		
 		logger.debug("연결된 뷰페이지(views/class/class.jsp)를 출력");
 		
@@ -64,7 +78,10 @@ public class ClassController {
 	// http://localhost:8088/class/booking
 	// 클래스 신청 상세페이지
 	@RequestMapping(value = "/booking", method = RequestMethod.GET)
-	public void bookingGET(String b_class,String b_date,String b_time, Model model, HttpSession session) throws Exception {
+	public void bookingGET(@RequestParam (required = false) String b_class,
+							@RequestParam (required = false) String b_date,
+							@RequestParam (required = false) String b_time,
+							Model model, HttpSession session) throws Exception {
 		logger.debug("bookingGET() 호출");
 		
 		// 세션 아이디
@@ -94,6 +111,8 @@ public class ClassController {
 	}
 	
 	
+
+		
 	
 	
 }
