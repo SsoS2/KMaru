@@ -55,7 +55,7 @@ input[name="us_id"],input[name="us_email"] {
 				<i class="fa fa-envelope-o ip"></i>
 				<input type="text" name="us_email" placeholder="    Email" class="focus">
 			</div>
-			<input type="button" class="find" value="비밀번호찾기">
+			<input type="submit" class="find" value="비밀번호찾기">
 			<div class="a">
 				<a href="/user/userLogin">로그인 |</a>
 				<a href="/user/userFindId"> 아이디찾기 | </a>

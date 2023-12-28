@@ -118,38 +118,40 @@ public class UserController {
 	public String userFindPost(UsVO vo,Model model) throws Exception{
 		logger.debug("userFindPost()");
 		String us_pw = uService.userFindPw(vo);
+		logger.debug("us_pw : "+us_pw);
 		model.addAttribute("us_pw", us_pw);
-		return "/user/sendMail";
+		return "redirect:/user/sendMail";
 	}
 	
-//	@RequestMapping("/sendMail")
-//	public String sendMail(String us_id) throws Exception{
-//		logger.debug("sendMail()");
-//		
-//		new Thread(new Runnable() {
-//			
-//			@Override
-//			public void run() {
-//				try {
-//					
-//					StringBuffer text = new StringBuffer();
-//					text.append("<html>");
-//					text.append("<head></head>");
-//					text.append("<body>");
-//					text.append("<h1>안녕하세요 KMaru 입니다.</h1>");
-//					text.append("<h1>고객님의 아이디는 ");
-//					text.append(us_id);
-//					text.append(" 입니다.</h1>");
-//					text.append("</body>");
-//					text.append("</html>");
-//					uService.sendMail("wndnjs9326@naver.com","[KMaru] 아이디 안내 메일 입니다.",text.toString());
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}).start();
-//		
-//		return "redirect:user/userFindId";
-//	}
-//	
+	@RequestMapping("/sendMail")
+	public String sendMail(String us_pw) throws Exception{
+		logger.debug("sendMail()");
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				try {
+					
+					StringBuffer text = new StringBuffer();
+					text.append("<html>");
+					text.append("<head></head>");
+					text.append("<body>");
+					text.append("<h1>안녕하세요 KMaru 입니다.</h1>");
+					text.append("<h1>고객님의 비밀번호는 ");
+					text.append(us_pw);
+					text.append(" 입니다.</h1>");
+					text.append("<a href='http://localhost:8088/KMaru'> KMaru 홈페이지 </a>");
+					text.append("</body>");
+					text.append("</html>");
+					uService.sendMail("wndnjs9326@naver.com","[KMaru] 비밀번호 안내 메일 입니다.",text.toString());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}).start();
+		
+		return "redirect:/user/userLogin";
+	}
+	
 }
