@@ -2,8 +2,11 @@ package com.kmaru.controller;
 
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.net.http.HttpResponse;
 import java.util.Iterator;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -124,7 +127,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/sendMail")
-	public String sendMail(String us_pw) throws Exception{
+	public String sendMail(String us_pw,HttpServletResponse response) throws Exception{
 		logger.debug("sendMail()");
 		
 		new Thread(new Runnable() {
@@ -150,6 +153,15 @@ public class UserController {
 				}
 			}
 		}).start();
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+
+		out.println("<script>");
+		out.println("alert('비밀번호가 메일로 발송되었습니다.<br> 미발송시 입력한 내용 확인부탁드립니다.')");
+		out.println("</script>");
+
+		out.flush();
 		
 		return "redirect:/user/userLogin";
 	}

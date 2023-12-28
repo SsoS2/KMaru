@@ -67,7 +67,7 @@ public class UserService {
 		
 		msgHelper.setTo(to);
 		msgHelper.setSubject(subject);
-		msgHelper.setText(content);
+		msgHelper.setText(content,true);
 		
 		mailSender.send(msg);
 		logger.debug("service : sendMail() 끝");
