@@ -48,8 +48,9 @@ public class UserDAO {
 	
 	// 아이디 찾기
 	public String userFindIdCompare(UsVO vo) throws Exception{
-		logger.debug("DAO : userFindIdCompare()");
-		return  sqlSession.selectOne(NAMESPACE+".userFindIdCompare", vo);
+		logger.debug("DAO : userFindIdCompare()"+vo);
+		logger.debug("DAO : " + sqlSession.selectOne(NAMESPACE+".userFindIdCompare", vo));
+		return sqlSession.selectOne(NAMESPACE+".userFindIdCompare", vo);
 	}
 
 }

@@ -47,7 +47,7 @@ input[name="us_name"],input[name="us_pw"] {
 $(function(){
 	$('.find').click(function(){
 		var us_name = $('input[name=us_name]').val();
-		var us_email = $('input[name=us_name]').val();
+		var us_email = $('input[name=us_email]').val();
 		$.ajax({
 			url : "/user/userFindIdCompare",
 			data : {
@@ -57,6 +57,9 @@ $(function(){
 			dataType : "json",
 			success : function(data){
 				console.log(data);
+				if(data != null || data != ""){
+					alert("메일로 아이디 전송드렸습니다.<br>메일이 안왔을시 입력한 내용을 확인해주세요.");
+				}
 			}
 		});
 	});//find
@@ -65,7 +68,7 @@ $(function(){
 <h1>userFindId</h1>
 <div>
 	<fieldset>
-		<form action="" method="post" class="form" name="fr" >
+	<div class="form" >
 			<div class="form">
 				<i class="icon icon-user iu"></i>
 				<input type="text" name="us_name" placeholder="    Name" class="focus" >
@@ -80,7 +83,7 @@ $(function(){
 				<a href="/user/userFindPw"> 비밀번호찾기 | </a>
 				<a href="/user/userSignUp"> 회원가입</a>
 			</div>
-		</form>
+		</div>
 	</fieldset>
 </div>
 
