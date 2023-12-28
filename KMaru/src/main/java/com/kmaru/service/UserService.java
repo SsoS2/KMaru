@@ -2,13 +2,10 @@ package com.kmaru.service;
 
 
 import javax.inject.Inject;
-import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.kmaru.domain.UsVO;
@@ -47,23 +44,22 @@ public class UserService {
 	
 	// 아이디 찾기
 	public String userFindIdCompare(UsVO vo) throws Exception{
-		logger.debug("service : userFindIdCompare()"+vo);
-		logger.debug("service : "+udao.userFindIdCompare(vo));
+		logger.debug("service : userFindIdCompare()");
 		return  udao.userFindIdCompare(vo);
 	}
 	
 	// 메일보내기
-	@Async
-	public void sendMail(String to,String subject,String content) throws Exception{
-		logger.debug("service : sendMail() 시작");
-		MimeMessage msg = mailSender.createMimeMessage();
-		MimeMessageHelper msgHelper = new MimeMessageHelper(msg,true,"UTF-8");
-		
-		msgHelper.setSubject(subject);
-		msgHelper.setTo(to);
-		msgHelper.setText(content,true);
-		
-		mailSender.send(msg);
-		logger.debug("service : sendMail() 끝");
-	}
+//	@Async
+//	public void sendMail(String to,String subject,String content) throws Exception{
+//		logger.debug("service : sendMail() 시작");
+//		MimeMessage msg = mailSender.createMimeMessage();
+//		MimeMessageHelper msgHelper = new MimeMessageHelper(msg,true,"UTF-8");
+//		
+//		msgHelper.setTo(to);
+//		msgHelper.setSubject(subject);
+//		msgHelper.setText(content);
+//		
+//		mailSender.send(msg);
+//		logger.debug("service : sendMail() 끝");
+//	}
 }

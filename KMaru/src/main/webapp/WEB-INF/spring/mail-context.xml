@@ -7,13 +7,13 @@
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
 		<property name="username" value="koreamaru003@gmail.com" />
-		<property name="password" value="pbjylagmjavnzuf" />
+		<property name="password" value="knhvutntfyosyjko" />
 		<property name="javaMailProperties">
 			<props>
-				<prop key="mail.transprot.protocol">smtp</prop>
-				<prop key="mail.stmp.auth">true</prop>
-				<prop key="mail.stmp.starttls.enable">true</prop>
-				<prop key="mail.stmp.soketFatory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="maile.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
 				<prop key="mail.debug">true</prop>
 			</props>
 		</property>

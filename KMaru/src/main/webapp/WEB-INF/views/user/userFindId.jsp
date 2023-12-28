@@ -34,7 +34,7 @@ fieldset{
     font-size: small;
 }
 
-input[name="us_name"],input[name="us_pw"] {
+input[name="us_name"],input[name="us_email"] {
     padding-left: 40px;    
 }
 
@@ -57,8 +57,11 @@ $(function(){
 			dataType : "json",
 			success : function(data){
 				console.log(data);
-				if(data != null || data != ""){
-					alert("메일로 아이디 전송드렸습니다.<br>메일이 안왔을시 입력한 내용을 확인해주세요.");
+				alert(data);
+				if(data != null && data == "0"){
+					alert("회원이 아닙니다.");
+				}else{
+					alert("고객님의 ID는 "+data+" 입니다.");
 				}
 			}
 		});
@@ -77,7 +80,7 @@ $(function(){
 				<i class="fa fa-envelope-o ip"></i>
 				<input type="text" name="us_email" placeholder="    Email" class="focus">
 			</div>
-			<input type="submit" class="find" value="아이디찾기">
+			<input type="button" class="find" value="아이디찾기">
 			<div class="a">
 				<a href="/user/userSignUp">로그인 |</a>
 				<a href="/user/userFindPw"> 비밀번호찾기 | </a>

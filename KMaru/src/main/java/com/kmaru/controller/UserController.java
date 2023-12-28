@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import com.kmaru.domain.UsVO;
 import com.kmaru.service.UserService;
 
 @Controller
+@EnableAsync
 @RequestMapping("/user/*")
 public class UserController {
 	
@@ -106,4 +108,34 @@ public class UserController {
 		return "/user/userFindId";
 	}
 	
+//	@RequestMapping("/sendMail")
+//	public String sendMail(String us_id) throws Exception{
+//		logger.debug("sendMail()");
+//		
+//		new Thread(new Runnable() {
+//			
+//			@Override
+//			public void run() {
+//				try {
+//					
+//					StringBuffer text = new StringBuffer();
+//					text.append("<html>");
+//					text.append("<head></head>");
+//					text.append("<body>");
+//					text.append("<h1>안녕하세요 KMaru 입니다.</h1>");
+//					text.append("<h1>고객님의 아이디는 ");
+//					text.append(us_id);
+//					text.append(" 입니다.</h1>");
+//					text.append("</body>");
+//					text.append("</html>");
+//					uService.sendMail("wndnjs9326@naver.com","[KMaru] 아이디 안내 메일 입니다.",text.toString());
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}).start();
+//		
+//		return "redirect:user/userFindId";
+//	}
+//	
 }
