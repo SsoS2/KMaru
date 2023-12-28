@@ -108,6 +108,20 @@ public class UserController {
 		return "/user/userFindId";
 	}
 	
+	@RequestMapping(value = "/userFindPw", method = RequestMethod.GET)
+	public String userFindGET() {
+		logger.debug("userFindGET()");
+		return "/user/userFindPw";
+	}
+	
+	@RequestMapping(value = "/userFindPw", method = RequestMethod.POST)
+	public String userFindPost(UsVO vo,Model model) throws Exception{
+		logger.debug("userFindPost()");
+		String us_pw = uService.userFindPw(vo);
+		model.addAttribute("us_pw", us_pw);
+		return "/user/sendMail";
+	}
+	
 //	@RequestMapping("/sendMail")
 //	public String sendMail(String us_id) throws Exception{
 //		logger.debug("sendMail()");

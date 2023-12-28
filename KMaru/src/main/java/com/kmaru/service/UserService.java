@@ -48,6 +48,12 @@ public class UserService {
 		return  udao.userFindIdCompare(vo);
 	}
 	
+	// 비밀번호 찾기
+	public String userFindPw(UsVO vo) throws Exception{
+		logger.debug("service : userFindPw()");
+		return udao.userFindPw(vo);
+	}
+	
 	// 메일보내기
 //	@Async
 //	public void sendMail(String to,String subject,String content) throws Exception{
