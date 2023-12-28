@@ -20,4 +20,9 @@
 		where us_id=#{us_id} and us_pw=#{us_pw}
 	</select>
 	
+	<select id="userFindIdCompare" resultType="String">
+		select ifnull(max(us_id),"0") from k_us 
+		where us_name=#{us_name} and us_email=#{us_email}
+	</select>
+	
 </mapper>  
