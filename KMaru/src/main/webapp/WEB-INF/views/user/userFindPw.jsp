@@ -30,11 +30,11 @@ fieldset{
 }
 .a{
 	margin-top: -18px;
-    margin-left: 31%;
+    margin-left: 32%;
     font-size: small;
 }
 
-input[name="us_name"],input[name="us_email"] {
+input[name="us_id"],input[name="us_email"] {
     padding-left: 40px;    
 }
 
@@ -43,51 +43,25 @@ input[name="us_name"],input[name="us_email"] {
 }
 
 </style>
-<script>
-$(function(){
-	$('.find').click(function(){
-		var us_name = $('input[name=us_name]').val();
-		var us_email = $('input[name=us_email]').val();
-		$.ajax({
-			url : "/user/userFindIdCompare",
-			data : {
-				"us_name" : us_name,
-				"us_email" : us_email
-			},
-			dataType : "json",
-			success : function(data){
-				console.log(data);
-				alert(data);
-				if(data != null && data == "0"){
-					alert("회원이 아닙니다.");
-				}else{
-					alert("고객님의 ID는 "+data+" 입니다.");
-					location.href="/user/userLogin";
-				}
-			}
-		});
-	});//find
-});
-</script>
-<h1>userFindId</h1>
+<h1>userFindPw</h1>
 <div>
 	<fieldset>
-	<div class="form" >
+		<form action="" method="post" class="form" >
 			<div class="form">
 				<i class="icon icon-user iu"></i>
-				<input type="text" name="us_name" placeholder="    Name(실명)" class="focus" >
+				<input type="text" name="us_id" placeholder="    ID" class="focus" >
 			</div>
 			<div class="form">
 				<i class="fa fa-envelope-o ip"></i>
 				<input type="text" name="us_email" placeholder="    Email" class="focus">
 			</div>
-			<input type="button" class="find" value="아이디찾기">
+			<input type="submit" class="find" value="비밀번호찾기">
 			<div class="a">
 				<a href="/user/userLogin">로그인 |</a>
-				<a href="/user/userFindPw"> 비밀번호찾기 | </a>
+				<a href="/user/userFindId"> 아이디찾기 | </a>
 				<a href="/user/userSignUp"> 회원가입</a>
 			</div>
-		</div>
+		</form>
 	</fieldset>
 </div>
 

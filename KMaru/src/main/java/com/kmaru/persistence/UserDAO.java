@@ -51,5 +51,12 @@ public class UserDAO {
 		logger.debug("DAO : userFindIdCompare()");
 		return sqlSession.selectOne(NAMESPACE+".userFindIdCompare", vo);
 	}
+	
+	// 비밀번호 찾기
+	public String userFindPw(UsVO vo) throws Exception{
+		logger.debug("DAO : userFindPw()"+vo);
+		logger.debug("DAO : "+sqlSession.selectOne(NAMESPACE+".userFindPw", vo));
+		return sqlSession.selectOne(NAMESPACE+".userFindPw", vo);
+	}
 
 }

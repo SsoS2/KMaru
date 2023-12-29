@@ -2,8 +2,11 @@ package com.kmaru.controller;
 
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.net.http.HttpResponse;
 import java.util.Iterator;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -108,34 +111,62 @@ public class UserController {
 		return "/user/userFindId";
 	}
 	
-//	@RequestMapping("/sendMail")
-//	public String sendMail(String us_id) throws Exception{
-//		logger.debug("sendMail()");
-//		
-//		new Thread(new Runnable() {
-//			
-//			@Override
-//			public void run() {
-//				try {
-//					
-//					StringBuffer text = new StringBuffer();
-//					text.append("<html>");
-//					text.append("<head></head>");
-//					text.append("<body>");
-//					text.append("<h1>안녕하세요 KMaru 입니다.</h1>");
-//					text.append("<h1>고객님의 아이디는 ");
-//					text.append(us_id);
-//					text.append(" 입니다.</h1>");
-//					text.append("</body>");
-//					text.append("</html>");
-//					uService.sendMail("wndnjs9326@naver.com","[KMaru] 아이디 안내 메일 입니다.",text.toString());
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}).start();
-//		
-//		return "redirect:user/userFindId";
-//	}
-//	
+	@RequestMapping(value = "/userFindPw", method = RequestMethod.GET)
+	public String userFindGET() {
+		logger.debug("userFindGET()");
+		return "/user/userFindPw";
+	}
+	
+	@RequestMapping(value = "/userFindPw", method = RequestMethod.POST)
+	public String userFindPost(UsVO vo,Model model) throws Exception{
+		logger.debug("userFindPost()");
+		String us_pw = uService.userFindPw(vo);
+		String us_email = vo.getUs_email();
+		logger.debug("us_pw : "+us_pw);
+		logger.debug("us_email : "+us_email);
+		model.addAttribute("us_pw", us_pw);
+		model.addAttribute("us_email", us_email);
+		return "redirect:/user/sendMail";
+	}
+	
+	@RequestMapping("/sendMail")
+	public String sendMail(String us_pw,String us_email,HttpServletResponse response) throws Exception{
+		logger.debug("sendMail()");
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				try {
+					
+					StringBuffer text = new StringBuffer();
+					text.append("<html>");
+					text.append("<head></head>");
+					text.append("<body>");
+					text.append("<h1>안녕하세요 KMaru 입니다.</h1>");
+					text.append("<h1>고객님의 비밀번호는 ");
+					text.append(us_pw);
+					text.append(" 입니다.</h1>");
+					text.append("<a href='http://localhost:8088/KMaru'> KMaru 홈페이지 </a>");
+					text.append("</body>");
+					text.append("</html>");
+					uService.sendMail(us_email,"[KMaru] 비밀번호 안내 메일 입니다.",text.toString());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}).start();
+		
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<script>");
+		out.println("alert('비밀번호가 메일로 발송되었습니다. \\n미발송시 입력한 내용 확인부탁드립니다.'); location.href='/user/userLogin';");
+		out.println("</script>");
+		
+		out.flush();
+		
+		return "redirect:/user/userLogin";
+	}
+	
 }
