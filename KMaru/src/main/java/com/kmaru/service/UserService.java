@@ -74,7 +74,7 @@ public class UserService {
 	
 	// 회원정보
 	public UsVO userInfo(String us_id) throws Exception{
-		logger.debug("service : userInfo()"+udao.userInfo(us_id));
+		logger.debug("service : userInfo()");
 		return udao.userInfo(us_id);
 	}
 }

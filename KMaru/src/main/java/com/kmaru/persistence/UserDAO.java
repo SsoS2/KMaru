@@ -60,7 +60,7 @@ public class UserDAO {
 	
 	// 회원정보
 	public UsVO userInfo(String us_id) throws Exception{
-		logger.debug("DAO : userInfo()"+sqlSession.selectOne(NAMESPACE+".userInfo"));
+		logger.debug("DAO : userInfo()");
 		return sqlSession.selectOne(NAMESPACE+".userInfo", us_id);
 	}
 

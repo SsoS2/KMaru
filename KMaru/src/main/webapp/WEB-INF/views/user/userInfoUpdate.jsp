@@ -61,23 +61,23 @@ input[type="file"]{
 </style>
 
  <div class="box">
-		<h2 class="box-title">내 정보</h2>
+		<h2 class="box-title">내 정보 수정하기</h2>
 		<form action="/user/userInfoUpdatePwCheck" name="fr">
 			<div class="form-group">
 				<label>아이디</label> 
-				<input type="text" name="us_id" value="${vo.us_id }" readonly>
+				<input type="text" name="us_id" value="${vo.us_id }">
 			</div>
 			<div class="form-group">
 				<label>이름</label> 
-				<input type="text" name="us_name" value="${vo.us_name }" readonly>
+				<input type="text" name="us_name" value="${vo.us_name }">
 			</div>
 			<div class="form-group">
 				<label>이메일</label> 
-				<input type="email" name="us_email" value="${vo.us_email }" readonly>
+				<input type="email" name="us_email" value="${vo.us_email }">
 			</div>
 			<div class="form-group">
 				<label>전화번호</label> 
-				<input type="text"  name="us_tel" value="${vo.us_tel }" readonly>
+				<input type="text"  name="us_tel" value="${vo.us_tel }">
 			</div>
 		<div class="form-group">
 			<button type="submit" id="join">수정하기</button>

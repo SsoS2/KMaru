@@ -183,4 +183,16 @@ public class UserController {
 		return "/user/userInfo";
 	}
 	
+	@RequestMapping(value = "/userInfoUpdatePwCheck", method = RequestMethod.GET)
+	public String userInfoUpdatePwCheckGET() throws Exception{
+		logger.debug("userInfoUpdatePwCheckGET()");
+		return "user/userInfoUpdatePwCheck";
+	}
+	
+	@RequestMapping(value = "/userInfoUpdate", method = RequestMethod.GET)
+	public String userInfoUpdateGET() throws Exception{
+		logger.debug("userInfoUpdateGET()");
+		return "/user/userInfoUpdate";
+	}
+	
 }
