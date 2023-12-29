@@ -30,4 +30,9 @@
 		where us_id=#{us_id} and us_email=#{us_email}
 	</select>
 	
+	<select id="userInfo" resultType="UsVO">
+		select * from k_us 
+		where us_id=#{us_id}
+	</select>
+	
 </mapper>  

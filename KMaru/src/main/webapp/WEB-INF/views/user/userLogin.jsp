@@ -43,9 +43,9 @@ input[name="us_id"],input[name="us_pw"] {
 }
 
 </style>
-<h1>userLogin</h1>
 <div>
 	<fieldset>
+		<h2>로그인</h2>
 		<form action="" method="post" class="form" name="fr" >
 			<div class="form">
 				<i class="icon icon-user iu"></i>

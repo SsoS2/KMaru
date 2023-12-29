@@ -60,6 +60,12 @@ font{
     box-shadow: 0 2px 3px 0 rgba(34,36,38,0.15);
     z-index: 2;
 }
+
+.a{
+	margin-top: -13px;
+    margin-left: 28%;
+    font-size: smaller;
+}
 </style>
 <script type="text/javascript">
 $(function(){
@@ -129,50 +135,51 @@ $(function(){
 	
 });
 </script>
-	<h1>userSignUp</h1>
-	
- <div class="box box-primary">
-	<div class="box-header with-border">
-		<h3 class="box-title">회원가입</h3>
-	</div>
+ <div class="box">
+	<h2 class="box-title">회원가입</h2>
 	<!-- enctype="multipart/form-data" -->
 	<form action="" method="post" enctype="multipart/form-data" name="fr">
 		<div class="box-body">
 			<div class="form-group">
-				<label for="exampleInput">아이디</label> 
-				<input type="text" class="form-control" id="us_id" name="us_id" placeholder="ID" maxlength="15">
+				<label>아이디</label> 
+				<input type="text" id="us_id" name="us_id" placeholder="ID" maxlength="15">
 				<font id="checkId" size="2"></font>
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">비밀번호</label> 
-				<input type="password" class="form-control" id="us_pw" name="us_pw" placeholder="Password">
+				<label>비밀번호</label> 
+				<input type="password" id="us_pw" name="us_pw" placeholder="Password">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">비밀번호 재확인</label> 
-				<input type="password" class="form-control" id="us_pw2" name="us_pw2" placeholder="Password">
+				<label>비밀번호 재확인</label> 
+				<input type="password" id="us_pw2" name="us_pw2" placeholder="Password">
 			</div>
 			<div class="form-group">
-				<label for="exampleInput">이름</label> 
-				<input type="text" class="form-control" id="us_name" name="us_name" placeholder="name">
+				<label>이름</label> 
+				<input type="text" id="us_name" name="us_name" placeholder="name">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputFile">프로필 사진</label> 
+				<label>프로필 사진</label> 
 				<input type="file" id="us_img" name="fileName" >
 			</div>
 			<div class="form-group">
-				<label for="exampleInputEmail1">이메일</label> 
-				<input type="email" class="form-control" id="us_email" name="us_email" placeholder="Email">
+				<label>이메일</label> 
+				<input type="email" id="us_email" name="us_email" placeholder="Email">
 			</div>
 			<div class="form-group">
-				<label for="exampleInput">전화번호</label> 
-				<input type="text" class="form-control" id="us_tel" name="us_tel" placeholder="Phone number ">
+				<label>전화번호</label> 
+				<input type="text" id="us_tel" name="us_tel" placeholder="Phone number ">
 			</div>
 		</div>
 		<div class="checkbox">
 			<label> <input type="checkbox" name="checkbox" > <a href="#" class="modal_show">이용약관</a>및 <a href="">개인정보취급방침</a>에 동의합니다.</label>
 		</div>
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary" id="join" onclick="singUp()">회원가입</button>
+			<button type="submit" id="join" onclick="singUp()">회원가입</button>
+			<div class="a">
+				<a href="/user/userLogin"> 로그인 |</a>
+				<a href="/user/userFindId"> 아이디찾기 | </a>
+				<a href="/user/userFindPw"> 비밀번호찾기</a>
+			</div>
 		</div>
 	</form>
 </div>
