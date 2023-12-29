@@ -121,13 +121,16 @@ public class UserController {
 	public String userFindPost(UsVO vo,Model model) throws Exception{
 		logger.debug("userFindPost()");
 		String us_pw = uService.userFindPw(vo);
+		String us_email = vo.getUs_email();
 		logger.debug("us_pw : "+us_pw);
+		logger.debug("us_email : "+us_email);
 		model.addAttribute("us_pw", us_pw);
+		model.addAttribute("us_email", us_email);
 		return "redirect:/user/sendMail";
 	}
 	
 	@RequestMapping("/sendMail")
-	public String sendMail(String us_pw,HttpServletResponse response) throws Exception{
+	public String sendMail(String us_pw,String us_email,HttpServletResponse response) throws Exception{
 		logger.debug("sendMail()");
 		
 		new Thread(new Runnable() {
@@ -147,7 +150,7 @@ public class UserController {
 					text.append("<a href='http://localhost:8088/KMaru'> KMaru 홈페이지 </a>");
 					text.append("</body>");
 					text.append("</html>");
-					uService.sendMail("wndnjs9326@naver.com","[KMaru] 비밀번호 안내 메일 입니다.",text.toString());
+					uService.sendMail(us_email,"[KMaru] 비밀번호 안내 메일 입니다.",text.toString());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
