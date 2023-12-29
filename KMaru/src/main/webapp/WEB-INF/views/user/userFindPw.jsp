@@ -30,7 +30,7 @@ fieldset{
 }
 .a{
 	margin-top: -18px;
-    margin-left: 312%;
+    margin-left: 32%;
     font-size: small;
 }
 

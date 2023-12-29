@@ -155,8 +155,12 @@ public class UserController {
 		}).start();
 		
 		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<script>alert('비밀번호가 메일로 발송되었습니다.<br> 미발송시 입력한 내용 확인부탁드립니다.'); location.href='/user/userLogin'; </script>");
+		out.println("<script>");
+		out.println("alert('비밀번호가 메일로 발송되었습니다. \\n미발송시 입력한 내용 확인부탁드립니다.'); location.href='/user/userLogin';");
+		out.println("</script>");
+		
 		out.flush();
 		
 		return "redirect:/user/userLogin";
