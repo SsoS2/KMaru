@@ -53,8 +53,7 @@ public class UserService {
 	
 	// 비밀번호 찾기
 	public String userFindPw(UsVO vo) throws Exception{
-		logger.debug("service : userFindPw()"+vo);
-		logger.debug("service : "+udao.userFindPw(vo));
+		logger.debug("service : userFindPw()");
 		return udao.userFindPw(vo);
 	}
 	
@@ -71,5 +70,11 @@ public class UserService {
 		
 		mailSender.send(msg);
 		logger.debug("service : sendMail() 끝");
+	}
+	
+	// 회원정보
+	public UsVO userInfo(String us_id) throws Exception{
+		logger.debug("service : userInfo()"+udao.userInfo(us_id));
+		return udao.userInfo(us_id);
 	}
 }

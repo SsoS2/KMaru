@@ -169,4 +169,18 @@ public class UserController {
 		return "redirect:/user/userLogin";
 	}
 	
+	@RequestMapping(value = "/userInfo",method = RequestMethod.GET)
+	public String userInfoGET(HttpSession session,Model model) throws Exception {
+		logger.debug("userInfoGET()");
+		
+		String us_id = (String)session.getAttribute("us_id");
+		logger.debug("us_id"+us_id);
+		
+		UsVO vo = uService.userInfo(us_id);
+		logger.debug("vo: "+vo);
+		model.addAttribute("vo", vo);
+		
+		return "/user/userInfo";
+	}
+	
 }

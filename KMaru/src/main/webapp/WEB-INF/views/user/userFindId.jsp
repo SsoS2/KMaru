@@ -6,6 +6,7 @@
 <style>
 fieldset{
 	padding-left: 20px;
+	padding-bottom: 33px;
     margin: auto 3%;
     display: flex;
     flex-direction: column;
@@ -69,9 +70,9 @@ $(function(){
 	});//find
 });
 </script>
-<h1>userFindId</h1>
 <div>
 	<fieldset>
+	<h2>아이디 찾기</h2>
 	<div class="form" >
 			<div class="form">
 				<i class="icon icon-user iu"></i>

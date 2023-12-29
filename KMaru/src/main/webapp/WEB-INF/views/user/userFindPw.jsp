@@ -43,9 +43,9 @@ input[name="us_id"],input[name="us_email"] {
 }
 
 </style>
-<h1>userFindPw</h1>
 <div>
 	<fieldset>
+		<h2>비밀번호 찾기</h2>
 		<form action="" method="post" class="form" >
 			<div class="form">
 				<i class="icon icon-user iu"></i>
