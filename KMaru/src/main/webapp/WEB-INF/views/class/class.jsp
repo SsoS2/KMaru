@@ -94,11 +94,6 @@
 		</div>
 	</section>
     
-    종류(음식)
-    일정(날짜)
-    회차(시간)
-    인원/수량
-    
 
     
 <%@ include file="../include/footer.jsp" %>
