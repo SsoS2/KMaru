@@ -1,46 +1,52 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@include file="../include/header.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"
-  integrity="sha384-6MFdIr0zOira1CHQkedUqJVql0YtcZA1P0nbPrQYJXVJZUkTk/oX4U9GhUIs3/z8" crossorigin="anonymous"></script>
-<script>
-  Kakao.init('f5ac5c856a52dc0497590340ddbc9b60'); // 사용하려는 앱의 JavaScript 키 입력
-</script>
+</head>
+<body>
+	<input type="text" id="message" />
+	<input type="button" id="sendBtn" value="전송"/>
+	<input type="button" id="closeBtn" value="나가기"/>	
+	<div id="messageArea"></div>
+</body>
 
-<div id="add-channel-button"></div>
-
-<script>
-
-//   // 1. 채널 추가 버튼
-//   Kakao.Channel.createAddChannelButton({
-//     container: '#add-channel-button',
-//     channelPublicId: '_kxcyPG',
-//   });
-  
-  
-  
-  Kakao.Auth.setAccessToken('${ACCESS_TOKEN}');
-  
-  // 2. 채널간편추가
-  Kakao.Channel.followChannel({
-	  channelPublicId: '${_kxcyPG}',
+<script type="text/javascript">
+	$("#sendBtn").click(function() {
+		sendMessage();
+		$('#message').val('')
+	});
+	
+	$("#closeBtn").click(function(){
+		sock.close();
 	})
-	  .then(function(response) {
-	    console.log(response)
-	    // 채널 간편 추가 성공 처리
-	  })
-	  .catch(function(error) {
-	    console.error(error)
-	    // 채널 간편 추가 실패 처리
-	  })
+
+	var sock = new SockJS("http://localhost:8088/chat/");
+	sock.onmessage = onMessage;
+	sock.onclose = onClose;
+	
+	// 메시지 전송
+	function sendMessage() {
+		sock.send($("#message").val());
+	}
+	
+	// 서버로부터 메시지를 받았을 때
+	function onMessage(msg) {
+		var data = msg.data;
+		$("#messageArea").append(data + "<br/>");
+	}
+	
+	// 서버와 연결을 끊었을 때
+	function onClose(evt) {
+		$("#messageArea").append("연결 끊김");
+	}
+
 </script>
-
-
-
-
-
-
-
-
-<%@include file="../include/footer.jsp"%>
+</html>
