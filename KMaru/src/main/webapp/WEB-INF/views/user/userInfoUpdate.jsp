@@ -58,14 +58,42 @@ input[type="file"]{
     margin-left: 28%;
     font-size: smaller;
 }
+
+input[id="us_pw2"]{
+    margin-bottom: 0rem;
+}
+
+font{
+	margin-bottom: 1.5rem;
+}
 </style>
+<script type="text/javascript">
+$(function(){
+	$('#us_pw2').keyup(function(){
+		var us_pw = $("#us_pw").val();
+		var us_pw2 = $("#us_pw2").val();
+		if(us_pw != "" && us_pw2 != ""){
+			if(us_pw != us_pw2){
+				$("#checkPw").html('비밀번호가 일치하지않습니다.');
+				$("#checkPw").attr('color','red');
+				$("#updateBtn").attr('disabled', 'disabled');
+				document.fr.us_pw2.focus();
+			}else{
+				$("#checkPw").text("비밀번호가 일치합니다.");
+				$("#checkPw").attr('color','green');
+				$("#updateBtn").removeAttr("disabled");
+			}
+		}
+	});
+});
+</script>
 
  <div class="box">
 		<h2 class="box-title">내 정보 수정하기</h2>
-		<form action="/user/userInfoUpdatePwCheck" name="fr">
+		<form action="/user/userInfoUpdate" method="post">
 			<div class="form-group">
 				<label>아이디</label> 
-				<input type="text" name="us_id" value="${vo.us_id }">
+				<input type="text" name="us_id" value="${vo.us_id }" readonly>
 			</div>
 			<div class="form-group">
 				<label>이름</label> 
@@ -79,8 +107,17 @@ input[type="file"]{
 				<label>전화번호</label> 
 				<input type="text"  name="us_tel" value="${vo.us_tel }">
 			</div>
+			<div class="form-group">
+				<label>새 비밀번호</label> 
+				<input type="text"  name="us_pw" id="us_pw" >
+			</div>
+			<div class="form-group">
+				<label>새 비밀번호 확인</label> 
+				<input type="text" id="us_pw2">
+				<font id="checkPw" size="2"></font>
+			</div>
 		<div class="form-group">
-			<button type="submit" id="join">수정하기</button>
+			<button type="submit" id="updateBtn">수정하기</button>
 		</div>
 	</form>
 </div>

@@ -62,7 +62,7 @@ input[type="file"]{
 
  <div class="box">
 		<h2 class="box-title">내 정보</h2>
-		<form action="/user/userInfoUpdatePwCheck" name="fr">
+		<form action="/user/userInfoUpdatePwCheck">
 			<div class="form-group">
 				<label>아이디</label> 
 				<input type="text" name="us_id" value="${vo.us_id }" readonly>
@@ -80,7 +80,7 @@ input[type="file"]{
 				<input type="text"  name="us_tel" value="${vo.us_tel }" readonly>
 			</div>
 		<div class="form-group">
-			<button type="submit" id="join">수정하기</button>
+			<button type="submit" id="updateBtn">수정하기</button>
 		</div>
 	</form>
 </div>

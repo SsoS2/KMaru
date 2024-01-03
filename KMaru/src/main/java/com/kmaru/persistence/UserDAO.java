@@ -63,5 +63,17 @@ public class UserDAO {
 		logger.debug("DAO : userInfo()");
 		return sqlSession.selectOne(NAMESPACE+".userInfo", us_id);
 	}
+	
+	// 회원정보 업데이트 비밀번호체크
+	public String userInfoUpdatePwCheck(String us_id) throws Exception{
+		logger.debug("DAO : userInfoUpdatePwCheck()");
+		return sqlSession.selectOne(NAMESPACE+".userInfoUpdatePwCheck", us_id);
+	}
+	
+	// 회원정보 업데이트
+	public void userInfoUpdate(UsVO vo) throws Exception{
+		logger.debug("DAO : userInfoUpdate()");
+		sqlSession.update(NAMESPACE+".userInfoUpdate", vo);
+	}
 
 }

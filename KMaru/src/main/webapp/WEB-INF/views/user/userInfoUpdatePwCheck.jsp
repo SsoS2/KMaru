@@ -15,8 +15,8 @@ fieldset{
 <div>
 	<fieldset>
 		<h2>비밀번호 확인</h2>
-		<form action="/user/userInfoUpdate" method="post" name="fr" >
-				<input type="text" name="us_pw">
+		<form action="/user/userInfoUpdatePwCheck" method="post">
+			<input type="text" name="us_pw">
 			<input type="submit" value="확인" style="margin-top: 20px;">
 			<input type="button" value="돌아가기" onclick="location.href='/user/userInfo';" style="margin-top: 20px;">
 		</form>

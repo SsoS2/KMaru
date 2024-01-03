@@ -77,4 +77,17 @@ public class UserService {
 		logger.debug("service : userInfo()");
 		return udao.userInfo(us_id);
 	}
+	
+	// 회원정보 업데이트 비밀번호체크
+	public String userInfoUpdatePwCheck(String us_id) throws Exception{
+		logger.debug("service : userInfoUpdatePwCheck()");
+		return udao.userInfoUpdatePwCheck(us_id);
+	}
+	
+	// 회원정보 업데이트
+	public void userInfoUpdate(UsVO vo) throws Exception{
+		logger.debug("DAO : userInfoUpdate()");
+		udao.userInfoUpdate(vo);
+	}
+
 }

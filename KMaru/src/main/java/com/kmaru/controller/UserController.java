@@ -186,13 +186,58 @@ public class UserController {
 	@RequestMapping(value = "/userInfoUpdatePwCheck", method = RequestMethod.GET)
 	public String userInfoUpdatePwCheckGET() throws Exception{
 		logger.debug("userInfoUpdatePwCheckGET()");
-		return "user/userInfoUpdatePwCheck";
+		return "/user/userInfoUpdatePwCheck";
+	}
+	
+	@RequestMapping(value = "/userInfoUpdatePwCheck", method = RequestMethod.POST)
+	public String userInfoUpdatePwCheckPost(HttpSession session, String us_pw,HttpServletResponse response) throws Exception{
+		logger.debug("userInfoUpdatePwCheckPost()");
+		
+		String us_id = (String)session.getAttribute("us_id");
+		
+		logger.debug("us_id :"+us_id);
+		String pw = uService.userInfoUpdatePwCheck(us_id);
+		
+		logger.debug("us_pw :"+us_pw+"pw :"+pw);
+		
+		if(us_pw.equals(pw)) {
+			return "redirect:/user/userInfoUpdate";
+			
+		}else {
+			response.setContentType("text/html; charset=UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('비밀번호를 다시입력해주세요'); location.href='/user/userInfoUpdatePwCheck';");
+			out.println("</script>");
+			
+			out.flush();
+		}
+		
+		return null;
 	}
 	
 	@RequestMapping(value = "/userInfoUpdate", method = RequestMethod.GET)
-	public String userInfoUpdateGET() throws Exception{
+	public String userInfoUpdateGET(HttpSession session,Model model) throws Exception{
 		logger.debug("userInfoUpdateGET()");
+		
+		String us_id = (String)session.getAttribute("us_id");
+		logger.debug("us_id"+us_id);
+		
+		UsVO vo = uService.userInfo(us_id);
+		logger.debug("vo: "+vo);
+		model.addAttribute("vo", vo);
+		
 		return "/user/userInfoUpdate";
+	}
+	
+	@RequestMapping(value = "/userInfoUpdate",method = RequestMethod.POST)
+	public String userInfoUpdatePost(UsVO vo) throws Exception{
+		logger.debug("userInfoUpdatePost()");
+		
+		uService.userInfoUpdate(vo);
+		
+		return "redirect:/user/userInfo";
 	}
 	
 }
