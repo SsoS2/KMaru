@@ -58,10 +58,19 @@ input[type="file"]{
     margin-left: 28%;
     font-size: smaller;
 }
+
+h2:hover ~ #delete {
+	display: block;
+}
+
+#delete{
+	display: none;
+}
 </style>
 
  <div class="box">
 		<h2 class="box-title">내 정보</h2>
+		<a href="/user/userDelete" id="delete">탈퇴하기</a>
 		<form action="/user/userInfoUpdatePwCheck">
 			<div class="form-group">
 				<label>아이디</label> 
