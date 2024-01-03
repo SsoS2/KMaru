@@ -3,6 +3,7 @@ package com.kmaru.controller;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Spliterator;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -67,8 +68,21 @@ public class ClassController {
 //		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale); 
 		DateFormat dateFormat = DateFormat.getDateTimeInstance();
 		String formattedDate = dateFormat.format(date);
-		model.addAttribute("serverTime", formattedDate );
-		logger.debug("ser : "+ formattedDate);
+		logger.debug("Date : "+ formattedDate);
+		String nowTime;
+		int dayTime = 0;
+		int day = formattedDate.indexOf("오전");
+		if(day != -1) { // 오전이라면
+			nowTime = formattedDate.substring(formattedDate.indexOf("오전")+3, formattedDate.indexOf(":"));
+		}
+		else { // 오후라면
+			nowTime = formattedDate.substring(formattedDate.indexOf("오후")+3, formattedDate.indexOf(":"));
+			dayTime = 12;
+		}
+		logger.debug("substring" + nowTime);
+		
+		model.addAttribute("nowTime", nowTime );
+		model.addAttribute("dayTime", dayTime );
 		
 		logger.debug("연결된 뷰페이지(views/class/class.jsp)를 출력");
 		
