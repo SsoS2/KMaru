@@ -35,4 +35,14 @@
 		where us_id=#{us_id}
 	</select>
 	
+	<select id="userInfoUpdatePwCheck" resultType="String">
+		select ifnull(max(us_pw),"0") from k_us 
+		where us_id=#{us_id}
+	</select>
+	
+	<update id="userInfoUpdate">
+		update k_us set us_name=#{us_name}, us_email=#{us_email}, us_tel=#{us_tel}, us_pw=#{us_pw} 
+		where us_id=#{us_id}
+	</update>
+	
 </mapper>  
