@@ -240,4 +240,16 @@ public class UserController {
 		return "redirect:/user/userInfo";
 	}
 	
+	@RequestMapping("/userDelete")
+	public String userDelete(HttpSession session) throws Exception{
+		logger.debug("userDelete()");
+		
+		String us_id = (String)session.getAttribute("us_id");
+		logger.debug("us_id"+us_id);
+		
+		uService.userDelete(us_id);
+		
+		return "redirect:/KMaru";
+	}
+	
 }

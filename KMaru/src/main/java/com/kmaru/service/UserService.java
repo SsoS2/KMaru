@@ -86,8 +86,14 @@ public class UserService {
 	
 	// 회원정보 업데이트
 	public void userInfoUpdate(UsVO vo) throws Exception{
-		logger.debug("DAO : userInfoUpdate()");
+		logger.debug("service : userInfoUpdate()");
 		udao.userInfoUpdate(vo);
+	}
+	
+	// 회원탈퇴
+	public void userDelete(String us_id) throws Exception{
+		logger.debug("service : userDelete()");
+		udao.userDelete(us_id);
 	}
 
 }

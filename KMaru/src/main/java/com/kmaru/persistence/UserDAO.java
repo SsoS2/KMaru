@@ -75,5 +75,11 @@ public class UserDAO {
 		logger.debug("DAO : userInfoUpdate()");
 		sqlSession.update(NAMESPACE+".userInfoUpdate", vo);
 	}
+	
+	// 회원탈퇴
+	public void userDelete(String us_id) throws Exception{
+		logger.debug("DAO : userDelete()");
+		sqlSession.update(NAMESPACE+".userDelete", us_id);
+	}
 
 }
