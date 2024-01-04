@@ -1,7 +1,7 @@
 package com.kmaru.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ public class ChatHandler extends TextWebSocketHandler{
 	private static final Logger logger = LoggerFactory.getLogger(ChatHandler.class);
 	
 	// 세션리스트
-	private List<WebSocketSession> sessionList = new ArrayList<WebSocketSession>();
+	private Set<WebSocketSession> sessionList = new HashSet<WebSocketSession>();
 	
 	// 클라이언트가 연결 되었을 때 실행
 	@Override
