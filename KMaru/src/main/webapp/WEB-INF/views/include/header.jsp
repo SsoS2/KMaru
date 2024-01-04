@@ -180,7 +180,7 @@
                         <ul class="submenu">
                           <li><a href="/notice/noticeList?page=1" class="item-anchor">공지사항</a></li>
                           <li><a href="/notice/faqList?page=1" class="item-anchor">자주 묻는 질문</a></li>
-                          <li><a href="blog-masonry.html" class="item-anchor">1 : 1 문의</a></li>
+                          <li><a href="/chat/chat" class="item-anchor">1 : 1 문의</a></li>
                         </ul>
                       </li>
 

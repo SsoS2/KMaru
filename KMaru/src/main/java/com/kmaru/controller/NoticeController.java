@@ -82,14 +82,5 @@ public class NoticeController {
 	
 	
 	
-	// http://localhost:8088/notice/chat
-	@RequestMapping(value="/chat")
-	public void chatbot() throws Exception{
-		
-	}
-	
-	
-	
-	
 
 }
