@@ -17,7 +17,7 @@
 	
 	<select id="userLogin" resultType="UsVO">
 		select * from k_us 
-		where us_id=#{us_id} and us_pw=#{us_pw}
+		where us_id=#{us_id} and us_pw=#{us_pw} and us_state="정상"
 	</select>
 	
 	<select id="userFindIdCompare" resultType="String">
@@ -42,6 +42,11 @@
 	
 	<update id="userInfoUpdate">
 		update k_us set us_name=#{us_name}, us_email=#{us_email}, us_tel=#{us_tel}, us_pw=#{us_pw} 
+		where us_id=#{us_id}
+	</update>
+	
+	<update id="userDelete">
+		update k_us set us_state="탈퇴" 
 		where us_id=#{us_id}
 	</update>
 	

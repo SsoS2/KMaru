@@ -58,6 +58,8 @@ input[type="file"]{
     margin-left: 28%;
     font-size: smaller;
 }
+
+
 </style>
 
  <div class="box">

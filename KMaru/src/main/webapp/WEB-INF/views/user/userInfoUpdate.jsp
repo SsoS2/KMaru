@@ -85,6 +85,10 @@ $(function(){
 			}
 		}
 	});
+	
+	$('#delete').click(function(){
+		alert("탈퇴 하시겠습니까?");
+	});
 });
 </script>
 
@@ -117,6 +121,7 @@ $(function(){
 				<font id="checkPw" size="2"></font>
 			</div>
 		<div class="form-group">
+			<a href="/user/userDelete" id="delete">탈퇴하기</a>
 			<button type="submit" id="updateBtn">수정하기</button>
 		</div>
 	</form>
