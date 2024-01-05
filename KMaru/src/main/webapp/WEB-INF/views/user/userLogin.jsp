@@ -53,7 +53,7 @@ input[name="us_id"],input[name="us_pw"] {
 			</div>
 			<div class="form">
 				<i class="fa fa-lock ip"></i>
-				<input type="text" name="us_pw" placeholder="    Password" class="focus">
+				<input type="password" name="us_pw" placeholder="    Password" class="focus">
 			</div>
 			<input type="submit" class="login" value="로그인">
 			<div class="a">

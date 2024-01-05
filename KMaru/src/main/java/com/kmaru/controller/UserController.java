@@ -252,4 +252,13 @@ public class UserController {
 		return "redirect:/KMaru";
 	}
 	
+	@RequestMapping("/userLogout")
+	public String userLogout(HttpSession session) throws Exception{
+		logger.debug("userLogout()");
+		
+		session.invalidate();
+		
+		return "redirect:/KMaru";
+	}
+	
 }
