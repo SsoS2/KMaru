@@ -53,6 +53,10 @@
 	.menu-item:hover .submenu{
 	  display: block;
 	}
+	
+	.logout{
+		margin-right: 10px;
+	}
   </style>
 	
     <div class="preloader-wrapper">
@@ -109,6 +113,9 @@
               </div>
               <div class="col-md-4 col-sm-12 user-items">
                 <ul class="d-flex justify-content-end list-unstyled">
+                <c:if test="${!empty us_id }">
+                	<a href="/user/userLogout" class="logout">로그아웃</a>
+                </c:if>
                 <c:if test="${empty us_id }">
                   <li>
                     <a href="/user/userLogin">
