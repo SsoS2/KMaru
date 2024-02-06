@@ -48,35 +48,35 @@ public class UserController {
 	  	logger.debug("vo : "+vo);
 	  	uService.userSignUp(vo);
 	  	
-	  	//프로필사진 업로드
-		
-		String file = "";
-		Iterator<String> fileNames = multiRequest.getFileNames();
-		while (fileNames.hasNext()) {
-			String fileName = fileNames.next();
-			logger.debug("fileName : " + fileName);
-
-			MultipartFile mfile = multiRequest.getFile(fileName);
-			String oFileName = mfile.getOriginalFilename();
-			file = oFileName;
-
-			File profile = new File(multiRequest.getRealPath("\\upload\\") + fileName);
-			logger.debug("realPath : " + multiRequest.getRealPath("\\upload"));
-
-			if (mfile.getSize() != 0) {
-				if (!profile.exists()) {
-					if (profile.getParentFile().mkdirs()) {
-						profile.createNewFile();
-						profile.delete();
-					}
-				}
-				mfile.transferTo(new File(multiRequest.getRealPath("\\upload\\") + oFileName));
-				logger.debug("파일업로드 성공");
-			}
-		} // while 
-		logger.debug("file : "+file);
-
-		model.addAttribute("profile", file);
+//	  	//프로필사진 업로드
+//		
+//		String file = "";
+//		Iterator<String> fileNames = multiRequest.getFileNames();
+//		while (fileNames.hasNext()) {
+//			String fileName = fileNames.next();
+//			logger.debug("fileName : " + fileName);
+//
+//			MultipartFile mfile = multiRequest.getFile(fileName);
+//			String oFileName = mfile.getOriginalFilename();
+//			file = oFileName;
+//
+//			File profile = new File(multiRequest.getRealPath("\\upload\\") + fileName);
+//			logger.debug("realPath : " + multiRequest.getRealPath("\\upload"));
+//
+//			if (mfile.getSize() != 0) {
+//				if (!profile.exists()) {
+//					if (profile.getParentFile().mkdirs()) {
+//						profile.createNewFile();
+//						profile.delete();
+//					}
+//				}
+//				mfile.transferTo(new File(multiRequest.getRealPath("\\upload\\") + oFileName));
+//				logger.debug("파일업로드 성공");
+//			}
+//		} // while 
+//		logger.debug("file : "+file);
+//
+//		model.addAttribute("profile", file);
 		 
 	  	
 	  	return "redirect:/user/userLogin"; 
